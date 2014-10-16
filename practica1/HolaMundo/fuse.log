@@ -1,0 +1,22 @@
+Running: C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/hlocal/HolaMundo/simsum_isim_beh.exe -prj C:/hlocal/HolaMundo/simsum_beh.prj work.simsum 
+ISim P.15xf (signature 0xc3576ebc)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/hlocal/HolaMundo/p1.vhd" into library work
+Parsing VHDL file "C:/hlocal/HolaMundo/nuevotest.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture behavioral of entity p1 [p1_default]
+Compiling architecture testbench_arch of entity simsum
+Time Resolution for simulation is 1ps.
+Compiled 9 VHDL Units
+Built simulation executable C:/hlocal/HolaMundo/simsum_isim_beh.exe
+Fuse Memory Usage: 34860 KB
+Fuse CPU Usage: 404 ms

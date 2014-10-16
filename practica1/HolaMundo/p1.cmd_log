@@ -1,0 +1,10 @@
+xst -intstyle ise -ifn "C:/xilinx_ejercicios/HolaMundo/p1.xst" -ofn "C:/xilinx_ejercicios/HolaMundo/p1.syr" 
+xst -intstyle ise -ifn "C:/xilinx_ejercicios/HolaMundo/p1.xst" -ofn "C:/xilinx_ejercicios/HolaMundo/p1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc recursos/pines.ucf -p xc3s1000-ft256-4 p1.ngc p1.ngd  
+map -intstyle ise -p xc3s1000-ft256-4 -cm area -ir off -pr off -c 100 -o p1_map.ncd p1.ngd p1.pcf 
+xst -intstyle ise -ifn "C:/hlocal/HolaMundo/p1.xst" -ofn "C:/hlocal/HolaMundo/p1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc recursos/pines.ucf -p xc3s1000-ft256-4 p1.ngc p1.ngd  
+map -intstyle ise -p xc3s1000-ft256-4 -cm area -ir off -pr off -c 100 -o p1_map.ncd p1.ngd p1.pcf 
+par -w -intstyle ise -ol high -t 1 p1_map.ncd p1.ncd p1.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml p1.twx p1.ncd -o p1.twr p1.pcf 
+bitgen -intstyle ise -f p1.ut p1.ncd 

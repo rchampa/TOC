@@ -1,0 +1,15 @@
+V3 8
+FL C:/hlocal/Practica1b/practica1b.vhd 2014/10/15.18:14:41 P.15xf
+EN work/reg_paralelo 1413392300 FL C:/hlocal/Practica1b/practica1b.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/reg_paralelo/circuito 1413392301 \
+      FL C:/hlocal/Practica1b/practica1b.vhd EN work/reg_paralelo 1413392300
+FL C:/hlocal/Practica1b/recursos/simu_1b.vhd 2014/10/15.18:22:14 P.15xf
+EN work/simreg 0 FL C:/hlocal/Practica1b/recursos/simu_1b.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/std_logic_arith 1335251623 \
+      PB ieee/STD_LOGIC_UNSIGNED 1335251625 PB ieee/STD_LOGIC_TEXTIO 1335251626 \
+      PB std/TEXTIO 1335251621
+AR work/simreg/behavior 0 \
+      FL C:/hlocal/Practica1b/recursos/simu_1b.vhd EN work/simreg 0 \
+      CP reg_paralelo
+FL C:/hlocal/Practica1b/test.vhd 2014/10/15.18:01:40 P.15xf

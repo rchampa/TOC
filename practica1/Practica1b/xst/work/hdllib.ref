@@ -1,0 +1,4 @@
+AR reg_paralelo circuito C:/hlocal/Practica1b/practica1b.vhd sub00/vhpl02 1413392301
+EN simreg NULL C:/hlocal/Practica1b/recursos/simu_1b.vhd sub00/vhpl03 1413392192
+EN reg_paralelo NULL C:/hlocal/Practica1b/practica1b.vhd sub00/vhpl00 1413392300
+EN test NULL C:/hlocal/Practica1b/test.vhd sub00/vhpl01 1413389290

@@ -1,0 +1,11 @@
+V3 8
+FL C:/hlocal/HolaMundo/p1.vhd 2014/10/14.19:44:40 P.15xf
+EN work/p1 1413385862 FL C:/hlocal/HolaMundo/p1.vhd PB ieee/std_logic_1164 1381692176 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/p1/Behavioral 1413385863 \
+      FL C:/hlocal/HolaMundo/p1.vhd EN work/p1 1413385862
+FL C:/xilinx_ejercicios/HolaMundo/p1.vhd 2014/10/14.19:44:41 P.15xf
+FL C:/xilinx_ejercicios/HolaMundo/simu2.vhd 2014/10/15.16:13:55 P.15xf
+EN work/simu2 0 FL C:/xilinx_ejercicios/HolaMundo/simu2.vhd PB ieee/std_logic_1164 1381692176
+AR work/simu2/behavior 0 \
+      FL C:/xilinx_ejercicios/HolaMundo/simu2.vhd EN work/simu2 0 CP p1

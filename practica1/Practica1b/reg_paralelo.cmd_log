@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/hlocal/Practica1b/reg_paralelo.xst" -ofn "C:/hlocal/Practica1b/reg_paralelo.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/hlocal/sumador/pines.ucf -p xc3s1000-ft256-5 reg_paralelo.ngc reg_paralelo.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o reg_paralelo_map.ncd reg_paralelo.ngd reg_paralelo.pcf 
+par -w -intstyle ise -ol high -t 1 reg_paralelo_map.ncd reg_paralelo.ncd reg_paralelo.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml reg_paralelo.twx reg_paralelo.ncd -o reg_paralelo.twr reg_paralelo.pcf 
+bitgen -intstyle ise -f reg_paralelo.ut reg_paralelo.ncd 

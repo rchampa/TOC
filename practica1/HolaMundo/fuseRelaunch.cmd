@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/hlocal/HolaMundo/simsum_isim_beh.exe" -prj "C:/hlocal/HolaMundo/simsum_beh.prj" "work.simsum" 
