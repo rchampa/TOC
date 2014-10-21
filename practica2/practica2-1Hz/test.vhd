@@ -15,7 +15,7 @@ ARCHITECTURE behavior OF tb IS
  
     COMPONENT reflejo
     port(
-		clk,rst,boton,switch: in std_logic;
+		clk_100MHZ,rst,boton,switch: in std_logic;
 		luces: out std_logic_vector(4 downto 0)
 	 );
     END COMPONENT;
@@ -37,7 +37,7 @@ BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: reflejo PORT MAP (
-          clk => clk,
+          clk_100MHZ => clk,
           rst => rst,
 			 boton => boton,
           switch => switch,

@@ -1,2 +1,3 @@
+vhdl work "recursos/divider.vhd"
 vhdl work "reflejo.vhd"
 vhdl work "test.vhd"

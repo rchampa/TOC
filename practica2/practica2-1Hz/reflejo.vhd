@@ -31,23 +31,34 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity reflejo is
 	port(
-		clk,rst,boton,switch: in std_logic;
+		clk_100MHZ,rst,boton,switch: in std_logic;
 		luces: out std_logic_vector(4 downto 0)
 	);
 end reflejo;
 
 architecture Behavioral of reflejo is
 
+component divider is
+	port(
+		rst,clk_in: in std_logic;
+		clk_out: out std_logic
+	);
+end component;
+
+signal clk_1Hz : std_logic;
+
 type STATES is (ESPERA, COORDINACION, RAPIDO, MEDIO, LENTO, ERROR, LED_RAPIDO, LED_MEDIO, LED_LENTO, LED_ERROR); -- similar al enum de java
 signal STATE, NEXT_STATE: STATES;
 
 begin
 
-	SYNC: process(clk,rst)
+	nuevo_rejoj: divider port map (rst,clk_100MHZ,clk_1Hz);
+
+	SYNC: process(clk_1Hz,rst)
 	begin
 		if rst ='1' then
 			STATE <= ESPERA;
-		elsif clk'event and clk='1' then 
+		elsif clk_1Hz'event and clk_1Hz='1' then 
 			STATE <= NEXT_STATE;
 		end if;
 		
