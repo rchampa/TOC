@@ -1,0 +1,4 @@
+vhdl work "recursos/practica1b.vhd"
+vhdl work "recursos/adder.vhd"
+vhdl work "recursos/counter.vhd"
+vhdl work "recursos/tb.vhd"

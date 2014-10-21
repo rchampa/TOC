@@ -1,2 +1,2 @@
 vhdl work "practica1b.vhd"
-vhdl work "test.vhd"
+vhdl work "recursos/simu_1b.vhd"

@@ -48,13 +48,14 @@ clk_1Hz	<=	clk_100MHz;
 --Añadimos	el	resto	del	codigo	del	registro	paralelo	
 process(rst,clk_1Hz)
 begin	
-	if	rst='1'	then	
+	if	rst='1'	then	-- reset asincrono
 		S<="0000";	
-	elsif clk_1Hz'event	and	clk_1Hz='1'	then	
+	elsif clk_1Hz'event	and	clk_1Hz='1'	then --cargamos en alta
 	
-		if	load='1'	then	
+		if	load='1'	then	-- si la señal de load está a 1 se carga el contenido del registro de entrada en el de salida
 			S<=E;	
 		end if;	
+		
 	end if;
 end process;
 end circuito;

@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xc3576ebc */
+/* This file is designed for use with ISim build 0x7708f090 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/hlocal/Practica1b/practica1b.vhd";
+static const char *ng0 = "C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/practica1b.vhd";
 
 
 
@@ -99,7 +99,7 @@ LAB3:    t1 = (t0 + 3576);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(52, ng0);
-    t1 = (t0 + 5440);
+    t1 = (t0 + 5828);
     t6 = (t0 + 3720);
     t7 = (t6 + 56U);
     t8 = *((char **)t7);

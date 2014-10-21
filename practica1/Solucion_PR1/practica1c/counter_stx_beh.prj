@@ -1,0 +1,3 @@
+vhdl isim_temp "recursos/practica1b.vhd"
+vhdl isim_temp "recursos/adder.vhd"
+vhdl isim_temp "recursos/counter.vhd"

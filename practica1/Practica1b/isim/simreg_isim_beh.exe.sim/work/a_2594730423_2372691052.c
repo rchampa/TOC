@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xc3576ebc */
+/* This file is designed for use with ISim build 0x7708f090 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/hlocal/Practica1b/test.vhd";
+static const char *ng0 = "C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/recursos/simu_1b.vhd";
 
 
 
@@ -129,7 +129,7 @@ LAB2:    xsi_set_current_line(65, ng0);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(67, ng0);
-    t2 = (t0 + 5728);
+    t2 = (t0 + 6292);
     t4 = (t0 + 3776);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -162,7 +162,7 @@ LAB4:    xsi_set_current_line(70, ng0);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(72, ng0);
-    t2 = (t0 + 5732);
+    t2 = (t0 + 6296);
     t4 = (t0 + 3776);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -199,7 +199,7 @@ LAB8:    xsi_set_current_line(75, ng0);
     *((unsigned char *)t6) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(77, ng0);
-    t2 = (t0 + 5736);
+    t2 = (t0 + 6300);
     t4 = (t0 + 3776);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -236,7 +236,7 @@ LAB12:    xsi_set_current_line(80, ng0);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(82, ng0);
-    t2 = (t0 + 5740);
+    t2 = (t0 + 6304);
     t4 = (t0 + 3776);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -273,7 +273,7 @@ LAB16:    xsi_set_current_line(85, ng0);
     *((unsigned char *)t6) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(87, ng0);
-    t2 = (t0 + 5744);
+    t2 = (t0 + 6308);
     t4 = (t0 + 3776);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -310,7 +310,7 @@ LAB20:    xsi_set_current_line(90, ng0);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(92, ng0);
-    t2 = (t0 + 5748);
+    t2 = (t0 + 6312);
     t4 = (t0 + 3776);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);

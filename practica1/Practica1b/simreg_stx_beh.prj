@@ -1,2 +1,2 @@
 vhdl isim_temp "practica1b.vhd"
-vhdl isim_temp "test.vhd"
+vhdl isim_temp "recursos/simu_1b.vhd"

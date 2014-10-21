@@ -23,7 +23,7 @@ entity divisor is
 end divisor;
 
 architecture divisor_arch of divisor is
- SIGNAL cuenta: std_logic_vector(25 downto 0);
+ SIGNAL cuenta: std_logic_vector(25 downto 0); -- por qué hace falta 26 bits?
  SIGNAL clk_aux: std_logic;
   
   begin
@@ -34,16 +34,18 @@ clk_salida<=clk_aux;
   PROCESS(rst, clk_entrada)
   BEGIN
     IF (rst='1') THEN
-      cuenta<= (OTHERS=>'0');
-      clk_aux<='0';
+      cuenta<= (OTHERS=>'0'); -- se reinicia la cuenta a 0
+      clk_aux<='0'; -- se empieza en baja
     ELSIF(clk_entrada'EVENT AND clk_entrada='1') THEN
-      IF (cuenta="11111111111111111111111111") THEN 
+      
+		IF (cuenta="11111111111111111111111111") THEN -- cuando llegue a 2^26 = 100MHz?
       	clk_aux <= not clk_aux;
-        cuenta<= (OTHERS=>'0');
+         cuenta<= (OTHERS=>'0');
       ELSE
-        cuenta <= cuenta+'1';
-	clk_aux<=clk_aux;
-      END IF;
+			cuenta <= cuenta+'1';
+			clk_aux<=clk_aux;
+		END IF;
+		
     END IF;
   END PROCESS contador;
 

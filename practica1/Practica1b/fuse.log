@@ -1,10 +1,10 @@
-Running: C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/hlocal/Practica1b/simreg_isim_beh.exe -prj C:/hlocal/Practica1b/simreg_beh.prj work.simreg 
-ISim P.15xf (signature 0xc3576ebc)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/simreg_isim_beh.exe -prj C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/simreg_beh.prj work.simreg 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/hlocal/Practica1b/practica1b.vhd" into library work
-Parsing VHDL file "C:/hlocal/Practica1b/test.vhd" into library work
+Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/practica1b.vhd" into library work
+Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/recursos/simu_1b.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -17,6 +17,6 @@ Compiling architecture circuito of entity reg_paralelo [reg_paralelo_default]
 Compiling architecture behavior of entity simreg
 Time Resolution for simulation is 1ps.
 Compiled 9 VHDL Units
-Built simulation executable C:/hlocal/Practica1b/simreg_isim_beh.exe
-Fuse Memory Usage: 34880 KB
-Fuse CPU Usage: 452 ms
+Built simulation executable C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/simreg_isim_beh.exe
+Fuse Memory Usage: 32776 KB
+Fuse CPU Usage: 562 ms

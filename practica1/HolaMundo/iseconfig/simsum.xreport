@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-10-15T18:44:00</DateModified>
+  <DateModified>2014-10-21T05:33:23</DateModified>
   <ModuleName>simsum</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/hlocal/HolaMundo/iseconfig/simsum.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/hlocal/HolaMundo</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/RicardoWin7/Documents/git/TOC/practica1/HolaMundo/iseconfig/simsum.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/RicardoWin7/Documents/git/TOC/practica1/HolaMundo\</ImplementationReportsDirectory>
   <DateInitialized>2014-10-15T18:44:00</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
