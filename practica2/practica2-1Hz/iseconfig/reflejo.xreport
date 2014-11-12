@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-10-21T08:02:48</DateModified>
+  <DateModified>2014-11-05T21:23:19</DateModified>
   <ModuleName>reflejo</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/RicardoWin7/Documents/git/TOC/practica2/iseconfig/reflejo.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/RicardoWin7/Documents/git/TOC/practica2</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2-1Hz/iseconfig/reflejo.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2-1Hz\</ImplementationReportsDirectory>
   <DateInitialized>2014-10-21T08:02:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

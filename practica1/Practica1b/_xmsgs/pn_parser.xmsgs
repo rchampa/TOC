@@ -11,5 +11,8 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/practica1b.vhd&quot; into library work</arg>
 </msg>
 
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/RicardoWin7/Documents/git/TOC/practica1/Practica1b/recursos/divisor.vhd&quot; into library work</arg>
+</msg>
+
 </messages>
 

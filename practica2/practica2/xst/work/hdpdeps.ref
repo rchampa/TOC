@@ -1,0 +1,15 @@
+V3 7
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/reflejo.vhd 2014/10/21.22:54:22 P.20131013
+EN work/reflejo 1414167882 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/reflejo.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/reflejo/Behavioral 1414167883 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/reflejo.vhd \
+      EN work/reflejo 1414167882
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/test.vhd 2014/10/21.23:25:34 P.20131013
+EN work/tb 0 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/test.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/tb/behavior 0 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/test.vhd \
+      EN work/tb 0 CP reflejo

@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica3/practica3/adder.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica3/practica3/adder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 adder.ngc adder.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o adder_map.ncd adder.ngd adder.pcf 

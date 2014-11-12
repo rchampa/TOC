@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/RicardoWin7/Documents/git/TOC/practica3/practica3/test0_isim_beh.exe" -prj "C:/Users/RicardoWin7/Documents/git/TOC/practica3/practica3/test0_beh.prj" "work.test0" 

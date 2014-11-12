@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/RicardoWin7/Documents/git/TOC/practica2/reflejo.vhd";
+static const char *ng0 = "C:/Users/RicardoWin7/Documents/git/TOC/practica2/practica2/reflejo.vhd";
 
 
 
@@ -190,7 +190,7 @@ LAB16:    xsi_set_current_line(70, ng0);
     xsi_driver_first_trans_fast(t1);
 
 LAB15:    xsi_set_current_line(72, ng0);
-    t1 = (t0 + 6254);
+    t1 = (t0 + 6362);
     t3 = (4U != 4U);
     if (t3 == 1)
         goto LAB17;
@@ -222,7 +222,7 @@ LAB21:    xsi_set_current_line(75, ng0);
     xsi_driver_first_trans_fast(t1);
 
 LAB20:    xsi_set_current_line(77, ng0);
-    t1 = (t0 + 6258);
+    t1 = (t0 + 6366);
     t3 = (4U != 4U);
     if (t3 == 1)
         goto LAB22;
@@ -254,7 +254,7 @@ LAB26:    xsi_set_current_line(80, ng0);
     xsi_driver_first_trans_fast(t1);
 
 LAB25:    xsi_set_current_line(82, ng0);
-    t1 = (t0 + 6262);
+    t1 = (t0 + 6370);
     t3 = (4U != 4U);
     if (t3 == 1)
         goto LAB27;
@@ -277,7 +277,7 @@ LAB8:    xsi_set_current_line(84, ng0);
     *((unsigned char *)t6) = (unsigned char)9;
     xsi_driver_first_trans_fast(t1);
     xsi_set_current_line(85, ng0);
-    t1 = (t0 + 6266);
+    t1 = (t0 + 6374);
     t3 = (4U != 4U);
     if (t3 == 1)
         goto LAB29;
