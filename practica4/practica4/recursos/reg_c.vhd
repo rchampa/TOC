@@ -32,8 +32,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity reg_c is
 	generic (n: natural := 6);
 	port(
-		clk,rst,load: in std_logic;
+		clk,rst,load,shift: in std_logic;
 		data_in: in std_logic;
+		data_in_paralel: in std_logic_vector(n downto 0);
 		data_out: inout std_logic_vector(n downto 0)
 	);
 end reg_c;
@@ -48,6 +49,8 @@ begin
 			if rst = '1' then
 				data_out <= (OTHERS =>'0');
 			elsif	load='1'	then	
+				data_out <= data_in_paralel;	
+			elsif	shift='1'	then	
 				data_out <= (data_out(n-1 downto 0) & data_in);	
 			else
 				data_out <= data_out;

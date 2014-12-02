@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\RicardoWin7\Documents\git\TOC\practica4\practica4\tb_cmp_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/tb_cmp_isim_beh.wdb 
+Running: C:\Users\RicardoWin7\Documents\git\TOC\practica4\practica4\simu4b_3_6_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/simu4b_3_6_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 ----------------------------------------------------------------------
 INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
@@ -25,6 +25,6 @@ Time resolution is 1 ps
 # wave add /
 # run 1000 ns
 Simulator is doing circuit initialization process.
-at 0 ps, Instance /tb_cmp/uut/ : Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-at 0 ps, Instance /tb_cmp/uut/ : Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+at 0 ps, Instance /simu4b_3_6/uut/u_cmp/ : Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+at 0 ps, Instance /simu4b_3_6/uut/u_cmp/ : Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
 Finished circuit initialization process.

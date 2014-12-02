@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/tb_cmp_isim_beh.exe" -prj "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/tb_cmp_beh.prj" "work.tb_cmp" 
+-intstyle "ise" -incremental -o "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/simu4b_3_6_isim_beh.exe" -prj "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/simu4b_3_6_beh.prj" "work.simu4b_3_6" 

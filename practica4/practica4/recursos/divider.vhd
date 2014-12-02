@@ -22,12 +22,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+library UNISIM;
+use UNISIM.VComponents.all;
 
 entity divider is
 	generic (n: natural := 6; m: natural := 3);
@@ -74,8 +74,9 @@ end component;
 component reg_c is
 	generic (n: natural := 6);
 	port(
-		clk,rst,load: in std_logic;
+		clk,rst,load,shift: in std_logic;
 		data_in: in std_logic;
+		data_in_paralel: in std_logic_vector(n downto 0);
 		data_out: inout std_logic_vector(n downto 0)
 	);
 end component;
@@ -129,7 +130,9 @@ signal divisor_in: std_logic_vector(n downto 0);
 signal divisor_out: std_logic_vector(n downto 0);
 
 signal c_load : std_logic;
-signal c_in: std_logic_vector(n downto 0);
+signal c_shift : std_logic;
+signal c_in: std_logic;
+signal c_in_paralel: std_logic_vector(n downto 0);
 signal c_out: std_logic_vector(n downto 0);
 
 signal r_load : std_logic;
@@ -154,7 +157,9 @@ type STATES is (S1, S2, S3, S4, S5, S6, S7, S8, S9); -- similar al enum de java
 signal STATE, NEXT_STATE: STATES;
 begin
 
-	nuevo_rejoj: clk_divider port map (rst,clk,clk_1Hz);
+	--nuevo_rejoj: clk_divider port map (rst,clk,clk_1Hz);
+	
+	clk_1Hz <= clk;
 	
 	u_reg_dividendo: reg_dividendo generic map (n) 
 	port map (clk_1Hz,reset,dividendo_load,dividendo_in,dividendo_out,dividendo_msb);
@@ -163,7 +168,7 @@ begin
 	port map (clk_1Hz,reset,divisor_load,divisor_shift,divisor_in,divisor_out);
 	
 	u_reg_c: reg_c	generic map (n)
-	port map(clk_1Hz,reset,c_load,c_in,c_out);
+	port map(clk_1Hz,reset,c_load,c_shift,c_in,c_in_paralel,c_out);
 	
 	u_reg: reg generic map (n)
 	port map(clk_1Hz,reset,r_load,r_in,r_out);
@@ -178,10 +183,19 @@ begin
 	PORT map(cmp_A,cmp_B,cmp_salida);
 	
 	
-	SYNC: process(clk_1Hz,rst)
+	alu_A <= dividendo_out;
+	alu_B <= divisor_out;
+	
+	mux_a <= alu_out;
+	mux_b <= dividendo_out;
+	
+	dividendo_in <= mux_salida;
+	
+	
+	SYNC: process(clk_1Hz,reset)
 	begin
-		if rst ='1' then
-			STATE <= ESPERA;
+		if reset ='1' then
+			STATE <= S1;
 		elsif clk_1Hz'event and clk_1Hz='1' then 
 			STATE <= NEXT_STATE;
 		end if;
@@ -189,7 +203,7 @@ begin
 	end process SYNC;
 	
 	
-	COMB: process(STATE,boton, switch)
+	COMB: process(STATE)
 	begin
 		case STATE is
 			when S1 =>
@@ -206,14 +220,67 @@ begin
 				divisor_load <= '1';
 				divisor_in <= '0' & divisor & "000";
 				c_load <= '1';
-				c_in <= (others => '0');
+				c_in_paralel <= (others => '0');
+				c_shift <= '0';
 				r_load <= '1';
 				r_in <= (others => '0');
 				ready <= '0';
+				divisor_shift <= '0'; -- RICARDO
 				NEXT_STATE <= S3;
-		
+				
+			when S3 =>
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				dividendo_load <= '1';
+				divisor_load <= '0';
+				c_load <= '0';
+				r_load <= '0';
+				NEXT_STATE <= S4;
+			
+			when S4 =>
+				dividendo_load <= '0';
+				if dividendo_msb = '1' then
+					NEXT_STATE <= S5;
+				else
+					NEXT_STATE <= S6;
+				end if;
+				
+			when S5 =>
+				c_shift <= '1';
+				c_in <= '0';
+				dividendo_load <= '1';
+				alu_operation <= '0'; --la suma es '0': dividendo + divisor
+				NEXT_STATE <= S7;
+			
+			when S6 =>
+				c_shift <= '1';
+				c_in <= '1';
+				alu_operation <= '0'; --la suma es '0': dividendo + divisor
+				NEXT_STATE <= S7;
+				
+			when S7 =>
+				dividendo_load <= '0';
+				divisor_load <= '0';
+				c_load <= '0';
+				c_shift <= '0';
+				divisor_shift <= '1';
+				r_load <= '1';
+				r_in <= std_logic_vector(unsigned(r_out)+ 1);
+				NEXT_STATE <= S8;
+			
+			when S8 =>
+				dividendo_load <= '0';
+				divisor_load <= '0';
+				c_load <= '0';
+				r_load <= '0';
+				
+				if unsigned(r_out)<=(n-m) then
+					NEXT_STATE <= S3;
+				else
+					NEXT_STATE <= S1;
+				end if;
+			
 			when OTHERS =>
-				NEXT_STATE <= ESPERA;
+				NEXT_STATE <= S1;
 		end case;
 		
 	end process COMB;
