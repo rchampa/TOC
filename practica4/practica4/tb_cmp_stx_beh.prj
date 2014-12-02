@@ -1,0 +1,2 @@
+vhdl isim_temp "recursos/cmp.vhd"
+vhdl isim_temp "recursos/tb_cmp.vhd"

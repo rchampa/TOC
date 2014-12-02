@@ -1,0 +1,2 @@
+vhdl isim_temp "recursos/mux.vhd"
+vhdl isim_temp "recursos/tb_mux.vhd"

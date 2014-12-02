@@ -1,0 +1,2 @@
+vhdl isim_temp "recursos/reg_dividendo.vhd"
+vhdl isim_temp "recursos/tb_reg_dividendo.vhd"
