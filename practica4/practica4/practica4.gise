@@ -46,6 +46,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1417451630" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1417451630">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1417460401" xil_pn:in_ck="4059383353120924786" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1417460401">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -81,7 +82,9 @@
     <transform xil_pn:end_ts="1417460403" xil_pn:in_ck="4059383353120924786" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1417460403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="recursos/alu.vhd"/>
       <outfile xil_pn:name="recursos/cmp.vhd"/>
       <outfile xil_pn:name="recursos/mux.vhd"/>
@@ -98,9 +101,11 @@
     <transform xil_pn:end_ts="1417460409" xil_pn:in_ck="4059383353120924786" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4239930003032000640" xil_pn:start_ts="1417460403">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>

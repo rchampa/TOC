@@ -203,6 +203,13 @@ begin
 			when S2 =>
 				dividendo_load <= '1';
 				dividendo_in <= '0' & dividend;
+				divisor_load <= '1';
+				divisor_in <= '0' & divisor & "000";
+				c_load <= '1';
+				c_in <= (others => '0');
+				r_load <= '1';
+				r_in <= (others => '0');
+				ready <= '0';
 				NEXT_STATE <= S3;
 		
 			when OTHERS =>
