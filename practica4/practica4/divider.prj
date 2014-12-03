@@ -1,0 +1,8 @@
+vhdl work "recursos/reg_divisor.vhd"
+vhdl work "recursos/reg_dividendo.vhd"
+vhdl work "recursos/reg_c.vhd"
+vhdl work "recursos/reg.vhd"
+vhdl work "recursos/mux.vhd"
+vhdl work "recursos/clk_divider.vhd"
+vhdl work "recursos/alu.vhd"
+vhdl work "recursos/divider.vhd"

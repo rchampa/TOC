@@ -35,8 +35,8 @@ NET start LOC=L5;
 
 #barra de leds placa extendida
 
-NET ready LOC=L5;
-#NET C<1> LOC=N2;
+#NET ready LOC=L5;
+NET ready LOC=N2;
 #NET C<2> LOC=M3;
 #NET C<3> LOC=N1;
 NET quotient<5> LOC=T13;

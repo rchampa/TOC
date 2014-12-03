@@ -1,0 +1,8 @@
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\reg_divisor.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\reg_dividendo.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\reg_c.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\reg.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\mux.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\clk_divider.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\alu.vhd"
+vhdl work "C:\hlocal\TOC\practica4\practica4\recursos\divider.vhd"

@@ -1,0 +1,51 @@
+V3 32
+FL C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd 2014/12/03.15:00:21 P.15xf
+EN work/alu 1417623108 FL C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627 LB UNISIM \
+      PH unisim/VCOMPONENTS 1335251629
+AR work/alu/Behavioral 1417623109 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd EN work/alu 1417623108
+FL C:/hlocal/TOC/practica4/practica4/recursos/clk_divider.vhd 2014/12/03.15:00:21 P.15xf
+EN work/clk_divider 1417623096 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/clk_divider.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625
+AR work/clk_divider/divider_arch 1417623097 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/clk_divider.vhd \
+      EN work/clk_divider 1417623096
+FL C:/hlocal/TOC/practica4/practica4/recursos/divider.vhd 2014/12/03.17:11:33 P.15xf
+EN work/divider 1417623110 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/divider.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627 LB UNISIM \
+      PH unisim/VCOMPONENTS 1335251629
+AR work/divider/Behavioral 1417623111 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/divider.vhd EN work/divider 1417623110 \
+      CP clk_divider CP reg_dividendo CP reg_divisor CP reg_c CP reg CP mux CP alu
+FL C:/hlocal/TOC/practica4/practica4/recursos/mux.vhd 2014/12/03.15:00:21 P.15xf
+EN work/mux 1417623106 FL C:/hlocal/TOC/practica4/practica4/recursos/mux.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/mux/Behavioral 1417623107 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/mux.vhd EN work/mux 1417623106
+FL C:/hlocal/TOC/practica4/practica4/recursos/reg.vhd 2014/12/03.15:00:21 P.15xf
+EN work/reg 1417623104 FL C:/hlocal/TOC/practica4/practica4/recursos/reg.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/reg/Behavioral 1417623105 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/reg.vhd EN work/reg 1417623104
+FL C:/hlocal/TOC/practica4/practica4/recursos/reg_c.vhd 2014/12/03.15:00:21 P.15xf
+EN work/reg_c 1417623102 FL C:/hlocal/TOC/practica4/practica4/recursos/reg_c.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/reg_c/Behavioral 1417623103 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/reg_c.vhd EN work/reg_c 1417623102
+FL C:/hlocal/TOC/practica4/practica4/recursos/reg_dividendo.vhd 2014/12/03.15:00:21 P.15xf
+EN work/reg_dividendo 1417623098 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/reg_dividendo.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/reg_dividendo/Behavioral 1417623099 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/reg_dividendo.vhd \
+      EN work/reg_dividendo 1417623098
+FL C:/hlocal/TOC/practica4/practica4/recursos/reg_divisor.vhd 2014/12/03.15:00:21 P.15xf
+EN work/reg_divisor 1417623100 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/reg_divisor.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/reg_divisor/Behavioral 1417623101 \
+      FL C:/hlocal/TOC/practica4/practica4/recursos/reg_divisor.vhd \
+      EN work/reg_divisor 1417623100

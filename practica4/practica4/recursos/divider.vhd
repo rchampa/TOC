@@ -150,16 +150,16 @@ signal alu_A: std_logic_vector(n downto 0);
 signal alu_B: std_logic_vector(n downto 0);
 signal alu_out: std_logic_vector(n downto 0);
 
-signal cmp_A: std_logic_vector(n downto 0);
-signal cmp_B: std_logic_vector(n downto 0);
-signal cmp_salida: std_logic_vector(1 downto 0);
+--signal cmp_A: std_logic_vector(n downto 0);
+--signal cmp_B: std_logic_vector(n downto 0);
+--signal cmp_salida: std_logic_vector(1 downto 0);
 
 type STATES is (S1, S2, S3, S4, S5, S6, S7, S8); -- similar al enum de java
 signal STATE, NEXT_STATE: STATES;
 begin
 
-	nuevo_rejoj: clk_divider port map (reset,clk,clk_1Hz);
-	--clk_1Hz <= clk;
+	--nuevo_rejoj: clk_divider port map (reset,clk,clk_1Hz);
+	clk_1Hz <= clk;
 	
 	u_reg_dividendo: reg_dividendo generic map (n) 
 	port map (clk_1Hz,reset,dividendo_load,dividendo_in,dividendo_out,dividendo_msb);
@@ -220,10 +220,25 @@ begin
 					NEXT_STATE <= S2;
 				end if;
 				
+				--default
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				
+				dividendo_load <= '0';
+				divisor_load <= '0';
+				divisor_shift <= '0';
+				c_load <= '0';
+				c_shift <= '0';
+				r_load <= '0';
+				
+				divisor_in <= (others => '0');
+				r_in <= (others => '0');
+				c_in <= '0';
+				c_in_paralel <= (others => '0');
+				
 			when S2 =>
 				dividendo_load <= '1';
 				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
-				
 				divisor_load <= '1';
 				-- divisor_in <= '0' & divisor & "000";
 				divisor_in <= '0' & divisor & divisor_aux;
@@ -235,6 +250,10 @@ begin
 				ready <= '0';
 				divisor_shift <= '0'; -- RICARDO
 				NEXT_STATE <= S3;
+		
+				--default
+				c_in <= '0';
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
 				
 			when S3 =>
 				alu_operation <= '1'; --la resta es '1': dividendo - divisor
@@ -244,14 +263,37 @@ begin
 				c_load <= '0';
 				r_load <= '0';
 				NEXT_STATE <= S4;
+				
+				--default	
+				ready <= '0';
+				c_shift <= '0';		
+				divisor_in <= (others => '0');
+				divisor_shift <= '0';
+				r_in <= (others => '0');
+				c_in <= '0';
+				c_in_paralel <= (others => '0');
 			
 			when S4 =>
-				dividendo_load <= '0';
 				if dividendo_msb = '1' then
 					NEXT_STATE <= S5;
 				else
 					NEXT_STATE <= S6;
 				end if;
+				
+				--default
+				ready <= '0';
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				dividendo_load <= '0';
+				divisor_load <= '0';
+				c_load <= '0';
+				c_shift <= '0';
+				r_load <= '0';
+				divisor_in <= (others => '0');
+				divisor_shift <= '0';
+				r_in <= (others => '0');
+				c_in <= '0';
+				c_in_paralel <= (others => '0');
 				
 			when S5 =>
 				c_shift <= '1';
@@ -260,12 +302,35 @@ begin
 				dividendo_load <= '1';
 				alu_operation <= '0'; --la suma es '0': dividendo + divisor
 				NEXT_STATE <= S7;
+				
+				--default
+				ready <= '0';
+				divisor_load <= '0';
+				divisor_shift <= '0';
+				c_load <= '0';
+				r_load <= '0';
+				divisor_in <= (others => '0');
+				r_in <= (others => '0');
+				c_in_paralel <= (others => '0');
 			
 			when S6 =>
 				c_shift <= '1';
 				c_in <= '1';
 				alu_operation <= '0'; --la suma es '0': dividendo + divisor
 				NEXT_STATE <= S7;
+				
+				--default
+				ready <= '0';
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;	
+				dividendo_load <= '0';
+				divisor_load <= '0';
+				divisor_shift <= '0';
+				c_load <= '0';
+				r_load <= '0';
+				divisor_in <= (others => '0');
+				r_in <= (others => '0');
+				c_in_paralel <= (others => '0');
+
 				
 			when S7 =>
 				dividendo_load <= '0';
@@ -276,6 +341,14 @@ begin
 				r_load <= '1';
 				r_in <= std_logic_vector(unsigned(r_out)+ 1);
 				NEXT_STATE <= S8;
+				
+				--default
+				ready <= '0';
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;				
+				divisor_in <= (others => '0');
+				c_in <= '0';
+				c_in_paralel <= (others => '0');
 			
 			when S8 =>
 				divisor_shift <= '0';
@@ -289,9 +362,34 @@ begin
 				else
 					NEXT_STATE <= S1;
 				end if;
+				
+				--default
+				ready <= '0';
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
+				c_shift <= '0';
+				divisor_in <= (others => '0');
+				r_in <= (others => '0');
+				c_in <= '0';
+				c_in_paralel <= (others => '0');
 			
 			when OTHERS =>
 				NEXT_STATE <= S1;
+				--default
+				ready <= '0';
+				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
+				dividendo_load <= '0';
+				divisor_load <= '0';
+				divisor_shift <= '0';
+				c_load <= '0';
+				c_shift <= '0';
+				r_load <= '0';
+				
+				divisor_in <= (others => '0');
+				r_in <= (others => '0');
+				c_in <= '0';
+				c_in_paralel <= (others => '0');
 		end case;
 		
 	end process COMB_MAIN;

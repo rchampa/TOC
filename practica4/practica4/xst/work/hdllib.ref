@@ -1,0 +1,16 @@
+AR mux behavioral C:/hlocal/TOC/practica4/practica4/recursos/mux.vhd sub00/vhpl11 1417623107
+AR reg behavioral C:/hlocal/TOC/practica4/practica4/recursos/reg.vhd sub00/vhpl09 1417623105
+EN divider NULL C:/hlocal/TOC/practica4/practica4/recursos/divider.vhd sub00/vhpl14 1417623110
+AR divider behavioral C:/hlocal/TOC/practica4/practica4/recursos/divider.vhd sub00/vhpl15 1417623111
+EN clk_divider NULL C:/hlocal/TOC/practica4/practica4/recursos/clk_divider.vhd sub00/vhpl00 1417623096
+EN reg_divisor NULL C:/hlocal/TOC/practica4/practica4/recursos/reg_divisor.vhd sub00/vhpl04 1417623100
+AR clk_divider divider_arch C:/hlocal/TOC/practica4/practica4/recursos/clk_divider.vhd sub00/vhpl01 1417623097
+AR reg_divisor behavioral C:/hlocal/TOC/practica4/practica4/recursos/reg_divisor.vhd sub00/vhpl05 1417623101
+AR reg_c behavioral C:/hlocal/TOC/practica4/practica4/recursos/reg_c.vhd sub00/vhpl07 1417623103
+EN mux NULL C:/hlocal/TOC/practica4/practica4/recursos/mux.vhd sub00/vhpl10 1417623106
+AR alu behavioral C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd sub00/vhpl13 1417623109
+EN reg_dividendo NULL C:/hlocal/TOC/practica4/practica4/recursos/reg_dividendo.vhd sub00/vhpl02 1417623098
+EN reg_c NULL C:/hlocal/TOC/practica4/practica4/recursos/reg_c.vhd sub00/vhpl06 1417623102
+EN reg NULL C:/hlocal/TOC/practica4/practica4/recursos/reg.vhd sub00/vhpl08 1417623104
+AR reg_dividendo behavioral C:/hlocal/TOC/practica4/practica4/recursos/reg_dividendo.vhd sub00/vhpl03 1417623099
+EN alu NULL C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd sub00/vhpl12 1417623108

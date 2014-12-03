@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0x7708f090 */
+/* This file is designed for use with ISim build 0xc3576ebc */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/alu.vhd";
+static const char *ng0 = "C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd";
 extern char *IEEE_P_1242562249;
 
 char *ieee_p_1242562249_sub_1547198987_1035706684(char *, char *, char *, char *, char *, char *);
@@ -101,10 +101,10 @@ LAB2:    t36 = (t0 + 3112);
 LAB1:    return;
 LAB3:    t1 = (t0 + 1032U);
     t6 = *((char **)t1);
-    t1 = (t0 + 5116U);
+    t1 = (t0 + 4916U);
     t7 = (t0 + 1192U);
     t8 = *((char **)t7);
-    t7 = (t0 + 5132U);
+    t7 = (t0 + 4932U);
     t9 = ieee_p_1242562249_sub_1547198987_1035706684(IEEE_P_1242562249, t5, t6, t1, t8, t7);
     t10 = (t0 + 3192);
     t11 = (t10 + 56U);
@@ -117,10 +117,10 @@ LAB3:    t1 = (t0 + 1032U);
 
 LAB5:    t15 = (t0 + 1032U);
     t20 = *((char **)t15);
-    t15 = (t0 + 5116U);
+    t15 = (t0 + 4916U);
     t21 = (t0 + 1192U);
     t22 = *((char **)t21);
-    t21 = (t0 + 5132U);
+    t21 = (t0 + 4932U);
     t23 = ieee_p_1242562249_sub_1547270861_1035706684(IEEE_P_1242562249, t19, t20, t15, t22, t21);
     t24 = (t0 + 3192);
     t25 = (t24 + 56U);
