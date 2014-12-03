@@ -1,25 +1,25 @@
 #salida del oscilador a 100MHz
 #
-#NET clk_in LOC=T9;
+NET clk LOC=T9;
 #
 
 	#switches placa superior
 
-#NET SW<1> LOC=K4;
-#NET SW<2> LOC=K3;
-#NET SW<3> LOC=K2;
+NET divisor<2> LOC=K4;
+NET divisor<1> LOC=K3;
+NET divisor<0> LOC=K2;
 #NET SW<4> LOC=J4;
 
 	#switches placa extendida
 
-NET A<0> LOC=P12;
-NET A<1> LOC=J1;
-NET A<2> LOC=H1;
-NET A<3> LOC=H3;
-NET B<0> LOC=G2;
-NET B<1> LOC=K15;
-NET B<2> LOC=K16;
-NET B<3> LOC=F15;
+NET dividend<5> LOC=P12;
+NET dividend<4> LOC=J1;
+NET dividend<3> LOC=H1;
+NET dividend<2> LOC=H3;
+NET dividend<1> LOC=G2;
+NET dividend<0> LOC=K15;
+#NET B<2> LOC=K16;
+#NET B<3> LOC=F15;
 
 #
 	#push buttons placa superior
@@ -27,24 +27,24 @@ NET B<3> LOC=F15;
 #NET SW3 LOC=A13; 
 
 	# Push button placa extendida
-#NET pushb1 LOC=H4;
-#NET pushb2 LOC=L5;
+NET reset LOC=H4;
+NET start LOC=L5;
 #NET pushb3 LOC=N2;
 #NET pushb4 LOC=M3;
 
 
 #barra de leds placa extendida
 
-NET C<0> LOC=L5;
-NET C<1> LOC=N2;
-NET C<2> LOC=M3;
-NET C<3> LOC=N1;
-#NET leds<5> LOC=T13;
-#NET leds<6> LOC=L15;
-#NET leds<7> LOC=J13;
-#NET leds<8> LOC=H15;
-#NET leds<9> LOC=J16;
-#NET leds<10> LOC=J14;
+NET ready LOC=L5;
+#NET C<1> LOC=N2;
+#NET C<2> LOC=M3;
+#NET C<3> LOC=N1;
+NET quotient<5> LOC=T13;
+NET quotient<4> LOC=L15;
+NET quotient<3> LOC=J13;
+NET quotient<2> LOC=H15;
+NET quotient<1> LOC=J16;
+NET quotient<0> LOC=J14;
 
  
 

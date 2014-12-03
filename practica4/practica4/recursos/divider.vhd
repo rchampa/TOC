@@ -158,8 +158,8 @@ type STATES is (S1, S2, S3, S4, S5, S6, S7, S8); -- similar al enum de java
 signal STATE, NEXT_STATE: STATES;
 begin
 
-	--nuevo_rejoj: clk_divider port map (reset,clk,clk_1Hz);
-	clk_1Hz <= clk;
+	nuevo_rejoj: clk_divider port map (reset,clk,clk_1Hz);
+	--clk_1Hz <= clk;
 	
 	u_reg_dividendo: reg_dividendo generic map (n) 
 	port map (clk_1Hz,reset,dividendo_load,dividendo_in,dividendo_out,dividendo_msb);
