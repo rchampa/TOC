@@ -8,7 +8,6 @@ Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/re
 Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/reg_c.vhd" into library work
 Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/reg.vhd" into library work
 Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/mux.vhd" into library work
-Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/cmp.vhd" into library work
 Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/alu.vhd" into library work
 Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/divider.vhd" into library work
 Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/tb_m3_n6.vhd" into library work
@@ -24,11 +23,10 @@ Compiling architecture behavioral of entity reg_c [\reg_c(6)\]
 Compiling architecture behavioral of entity reg [\reg(6)\]
 Compiling architecture behavioral of entity mux [\mux(6)\]
 Compiling architecture behavioral of entity alu [\alu(6)\]
-Compiling architecture behavioral of entity cmp [\cmp(6)\]
 Compiling architecture behavioral of entity divider [\divider(6,3)\]
 Compiling architecture behavior of entity simu4b_3_6
 Time Resolution for simulation is 1ps.
-Compiled 21 VHDL Units
+Compiled 19 VHDL Units
 Built simulation executable C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/simu4b_3_6_isim_beh.exe
-Fuse Memory Usage: 45772 KB
-Fuse CPU Usage: 655 ms
+Fuse Memory Usage: 45760 KB
+Fuse CPU Usage: 640 ms

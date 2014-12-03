@@ -51,10 +51,10 @@ begin
 				msb_negated <= '1';
 			elsif	load='1'	then	
 				data_out <= data_in;	
-				msb_negated <= not data_in(n);
+				msb_negated <= data_in(n);
 			else
 				data_out <= data_out;
-				msb_negated <= not data_out(n);
+				msb_negated <= data_out(n);
 			end if;
 			
 		end if;

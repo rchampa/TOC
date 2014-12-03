@@ -109,13 +109,13 @@ component alu is
 	);
 end component;
 
-component cmp is
-	generic (n: natural := 6);
-	PORT(	a      : IN std_logic_vector(n DOWNTO 0); 
-			b      : IN std_logic_vector(n DOWNTO 0); 
-			salida : OUT std_logic_vector(1 DOWNTO 0)
-	);
-end component;
+--component cmp is
+--	generic (n: natural := 6);
+--	PORT(	a      : IN std_logic_vector(n DOWNTO 0); 
+--			b      : IN std_logic_vector(n DOWNTO 0); 
+--			salida : OUT std_logic_vector(1 DOWNTO 0)
+--	);
+--end component;
 
 signal clk_1Hz : std_logic;
 
@@ -179,31 +179,35 @@ begin
 	u_alu: alu generic map(n)
 	PORT map(alu_A,alu_B,alu_operation,alu_out);
 	
-	u_cmp: cmp generic map(n)
-	PORT map(cmp_A,cmp_B,cmp_salida);
+--	u_cmp: cmp generic map(n)
+--	PORT map(cmp_A,cmp_B,cmp_salida);
 	
 	
 	alu_A <= dividendo_out;
 	alu_B <= divisor_out;
 	
 	mux_a <= alu_out;
-	mux_b <= dividendo_out;
+	mux_b <= '0' & dividend;
 	
 	dividendo_in <= mux_salida;
 	
+	quotient <= c_out(n-1 downto 0);
 	
-	SYNC: process(clk_1Hz,reset)
+	
+	SYNC: process(clk_1Hz)
 	begin
-		if reset ='1' then
-			STATE <= S1;
-		elsif clk_1Hz'event and clk_1Hz='1' then 
-			STATE <= NEXT_STATE;
+		if clk_1Hz'event and clk_1Hz='1' then 
+			if reset ='1' then
+				STATE <= S1;
+			else
+				STATE <= NEXT_STATE;
+			end if;
 		end if;
 		
 	end process SYNC;
 	
 	
-	COMB: process(STATE)
+	COMB: process(STATE,start)
 	begin
 		case STATE is
 			when S1 =>
@@ -216,7 +220,8 @@ begin
 				
 			when S2 =>
 				dividendo_load <= '1';
-				dividendo_in <= '0' & dividend;
+				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
+				
 				divisor_load <= '1';
 				divisor_in <= '0' & divisor & "000";
 				c_load <= '1';
@@ -230,6 +235,7 @@ begin
 				
 			when S3 =>
 				alu_operation <= '1'; --la resta es '1': dividendo - divisor
+				mux_sel <= '0';
 				dividendo_load <= '1';
 				divisor_load <= '0';
 				c_load <= '0';
@@ -247,6 +253,7 @@ begin
 			when S5 =>
 				c_shift <= '1';
 				c_in <= '0';
+				mux_sel <= '0';
 				dividendo_load <= '1';
 				alu_operation <= '0'; --la suma es '0': dividendo + divisor
 				NEXT_STATE <= S7;
@@ -268,6 +275,7 @@ begin
 				NEXT_STATE <= S8;
 			
 			when S8 =>
+				divisor_shift <= '0';
 				dividendo_load <= '0';
 				divisor_load <= '0';
 				c_load <= '0';

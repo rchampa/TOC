@@ -1,0 +1,29 @@
+Command line:
+   reg_dividendo_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49238
+
+Wed Dec 03 02:11:50 2014
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 667.542 Meg
+
+ Total Signals          : 6
+ Total Nets             : 18
+ Total Signal Drivers   : 2
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 1
+ Total Traceable Variables  : 9
+ Total Scalar Nets and Variables : 379
+Total Line Count : 8
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 667.542 Meg
+
+Wed Dec 03 02:11:56 2014
+

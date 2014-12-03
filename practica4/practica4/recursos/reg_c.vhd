@@ -51,7 +51,7 @@ begin
 			elsif	load='1'	then	
 				data_out <= data_in_paralel;	
 			elsif	shift='1'	then	
-				data_out <= (data_out(n-1 downto 0) & data_in);	
+				data_out <= '0' & (data_out(n-2 downto 0) & data_in);	
 			else
 				data_out <= data_out;
 			end if;

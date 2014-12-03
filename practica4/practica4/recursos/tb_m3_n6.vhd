@@ -65,7 +65,7 @@ ARCHITECTURE behavior OF simu4b_3_6 IS
    signal ready: std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 100 ns;
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
@@ -97,11 +97,11 @@ BEGIN
      wait for 80 ns;
 		reset<='0';	
 		inicio<='1';
-		divisor<="101";
-		dividendo<="111101";
+		divisor<="101"; --5
+		dividendo<="101101"; -- 32+8+4+1=45
       wait for 2*clk_period;
 		inicio<='0';
-		wait for 20*clk_period;
+		wait for 4*clk_period;
 		inicio<='1';
 		divisor<="010";
 		dividendo<="111101";
@@ -125,6 +125,8 @@ BEGIN
 		dividendo<="100011";
 		wait for 2*clk_period;
 		inicio<='0';
+		
+		wait for 40*clk_period;
       wait;
 
    end process;

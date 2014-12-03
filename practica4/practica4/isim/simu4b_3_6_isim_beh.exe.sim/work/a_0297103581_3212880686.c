@@ -22,9 +22,7 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "C:/Users/RicardoWin7/Documents/git/TOC/practica4/practica4/recursos/reg_dividendo.vhd";
-extern char *IEEE_P_2592010699;
 
-unsigned char ieee_p_2592010699_sub_1690584930_503743352(char *, unsigned char );
 
 
 static void work_a_0297103581_3212880686_p_0(char *t0)
@@ -100,13 +98,12 @@ LAB12:    xsi_set_current_line(56, ng0);
     t20 = (0 + t19);
     t2 = (t4 + t20);
     t1 = *((unsigned char *)t2);
-    t3 = ieee_p_2592010699_sub_1690584930_503743352(IEEE_P_2592010699, t1);
     t5 = (t0 + 3576);
     t8 = (t5 + 56U);
     t11 = *((char **)t8);
     t12 = (t11 + 56U);
     t13 = *((char **)t12);
-    *((unsigned char *)t13) = t3;
+    *((unsigned char *)t13) = t1;
     xsi_driver_first_trans_fast_port(t5);
 
 LAB9:    goto LAB3;
@@ -159,13 +156,12 @@ LAB11:    xsi_set_current_line(53, ng0);
     t20 = (0 + t19);
     t2 = (t4 + t20);
     t1 = *((unsigned char *)t2);
-    t3 = ieee_p_2592010699_sub_1690584930_503743352(IEEE_P_2592010699, t1);
     t5 = (t0 + 3576);
     t8 = (t5 + 56U);
     t11 = *((char **)t8);
     t12 = (t11 + 56U);
     t13 = *((char **)t12);
-    *((unsigned char *)t13) = t3;
+    *((unsigned char *)t13) = t1;
     xsi_driver_first_trans_fast_port(t5);
     goto LAB9;
 
