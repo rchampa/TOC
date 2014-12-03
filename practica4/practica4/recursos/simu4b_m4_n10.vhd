@@ -32,17 +32,17 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY simu4b_3_6 IS
-END simu4b_3_6;
+ENTITY simu4b_4_10 IS
+END simu4b_4_10;
  
-ARCHITECTURE behavior OF simu4b_3_6 IS 
+ARCHITECTURE behavior OF simu4b_4_10 IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT divider
-	 generic (n: natural := 6; m: natural := 3);
+	 generic (n: natural := 10; m: natural := 4);
     PORT(
-         clk,reset: in std_logic;
+          clk,reset: in std_logic;
 		dividend: in std_logic_vector(n-1 downto 0); 
 		divisor: in std_logic_vector(m-1 downto 0); 
 		start: in std_logic;
@@ -54,29 +54,29 @@ ARCHITECTURE behavior OF simu4b_3_6 IS
     
 
    --Inputs
-   signal dividendo : std_logic_vector(5 downto 0) := (others => '0');
-   signal divisor : std_logic_vector(2 downto 0) := (others => '0');
+   signal dividendo : std_logic_vector(9 downto 0) := (others => '0');
+   signal divisor : std_logic_vector(3 downto 0) := (others => '0');
    signal inicio : std_logic := '0';
    signal reset : std_logic := '0';
    signal clk : std_logic := '0';
 
  	--Outputs
-   signal cociente : std_logic_vector(5 downto 0);
+   signal cociente : std_logic_vector(9 downto 0);
    signal ready: std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 80 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: divider generic map (6,3)
+   uut: divider generic map (10,4)
 		PORT MAP (
 	     clk => clk,
           reset => reset,
-          start => inicio,
-          dividend => dividendo,
+			 dividend => dividendo,
           divisor => divisor,
+          start => inicio,
           ready => ready,
 	     quotient => cociente
         );
@@ -95,40 +95,45 @@ BEGIN
    stim_proc: process
    begin		
       reset<='1';
-     wait for 80 ns;
+      wait for 100 ns;
 		reset<='0';	
 		inicio<='1';
-		divisor<="101"; --5
-		dividendo<="101101"; -- 32+8+4+1=45
+		divisor<="1011"; -- 1+2+8 = 11
+		dividendo<="1010101001"; -- 1+8+32+128+512 = 681 -> 681/11 = 61
       wait for 2*clk_period;
 		inicio<='0';
-		wait for 4*clk_period;
+		wait for 35*clk_period;
 		inicio<='1';
-		divisor<="010";
-		dividendo<="111101";
+		divisor<="0110";
+		dividendo<="1000011101";
 		wait for 2*clk_period;
 		inicio<='0';
-		wait for 20*clk_period;
+		wait for 35*clk_period;
 		inicio<='1';
-		divisor<="011";
-		dividendo<="011101";
+		divisor<="0111";
+		dividendo<="1000011101";
 		wait for 2*clk_period;
 		inicio<='0';
-		wait for 20*clk_period;
+		wait for 35*clk_period;
 		inicio<='1';
-		divisor<="011";
-		dividendo<="101001";
+		divisor<="0111";
+		dividendo<="1011011101";
 		wait for 2*clk_period;
 		inicio<='0';
-		wait for 20*clk_period;
+		wait for 35*clk_period;
 		inicio<='1';
-		divisor<="011";
-		dividendo<="100011";
+		divisor<="0101";
+		dividendo<="1011011101";
 		wait for 2*clk_period;
 		inicio<='0';
-		
-		wait for 40*clk_period;
-      wait;
+		wait for 35*clk_period;
+		inicio<='1';
+		divisor<="0100";
+		dividendo<="1011011101";
+		wait for 2*clk_period;
+		inicio<='0';
+		wait;
+
 
    end process;
 

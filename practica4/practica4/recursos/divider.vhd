@@ -128,6 +128,7 @@ signal divisor_load : std_logic;
 signal divisor_shift: std_logic;
 signal divisor_in: std_logic_vector(n downto 0);
 signal divisor_out: std_logic_vector(n downto 0);
+signal divisor_aux: std_logic_vector(n-m-1 downto 0);
 
 signal c_load : std_logic;
 signal c_shift : std_logic;
@@ -157,8 +158,7 @@ type STATES is (S1, S2, S3, S4, S5, S6, S7, S8); -- similar al enum de java
 signal STATE, NEXT_STATE: STATES;
 begin
 
-	--nuevo_rejoj: clk_divider port map (rst,clk,clk_1Hz);
-	
+	--nuevo_rejoj: clk_divider port map (reset,clk,clk_1Hz);
 	clk_1Hz <= clk;
 	
 	u_reg_dividendo: reg_dividendo generic map (n) 
@@ -193,6 +193,8 @@ begin
 	
 	quotient <= c_out(n-1 downto 0);
 	
+	divisor_aux <= (others => '0');
+	
 	
 	SYNC: process(clk_1Hz)
 	begin
@@ -207,7 +209,7 @@ begin
 	end process SYNC;
 	
 	
-	COMB: process(STATE,start)
+	COMB_MAIN: process(STATE,start)
 	begin
 		case STATE is
 			when S1 =>
@@ -223,7 +225,8 @@ begin
 				mux_sel <= '1'; --dividendo_in <= '0' & dividend;
 				
 				divisor_load <= '1';
-				divisor_in <= '0' & divisor & "000";
+				-- divisor_in <= '0' & divisor & "000";
+				divisor_in <= '0' & divisor & divisor_aux;
 				c_load <= '1';
 				c_in_paralel <= (others => '0');
 				c_shift <= '0';
@@ -291,7 +294,7 @@ begin
 				NEXT_STATE <= S1;
 		end case;
 		
-	end process COMB;
+	end process COMB_MAIN;
 
 
 
