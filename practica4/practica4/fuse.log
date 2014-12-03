@@ -1,4 +1,4 @@
-Running: C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/hlocal/TOC/practica4/practica4/simu4b_4_10_isim_beh.exe -prj C:/hlocal/TOC/practica4/practica4/simu4b_4_10_beh.prj work.simu4b_4_10 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/hlocal/TOC/practica4/practica4/simu4b_3_6_isim_beh.exe" -prj "C:/hlocal/TOC/practica4/practica4/simu4b_3_6_beh.prj" "work.simu4b_3_6" 
 ISim P.15xf (signature 0xc3576ebc)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
@@ -10,24 +10,23 @@ Parsing VHDL file "C:/hlocal/TOC/practica4/practica4/recursos/reg.vhd" into libr
 Parsing VHDL file "C:/hlocal/TOC/practica4/practica4/recursos/mux.vhd" into library work
 Parsing VHDL file "C:/hlocal/TOC/practica4/practica4/recursos/alu.vhd" into library work
 Parsing VHDL file "C:/hlocal/TOC/practica4/practica4/recursos/divider.vhd" into library work
-Parsing VHDL file "C:/hlocal/TOC/practica4/practica4/recursos/simu4b_m4_n10.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica4/practica4/recursos/tb_m3_n6.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling package vcomponents
-Compiling architecture behavioral of entity reg_dividendo [\reg_dividendo(10)\]
-Compiling architecture behavioral of entity reg_divisor [\reg_divisor(10)\]
-Compiling architecture behavioral of entity reg_c [\reg_c(10)\]
-Compiling architecture behavioral of entity reg [\reg(10)\]
-Compiling architecture behavioral of entity mux [\mux(10)\]
-Compiling architecture behavioral of entity alu [\alu(10)\]
-Compiling architecture behavioral of entity divider [\divider(10,4)\]
-Compiling architecture behavior of entity simu4b_4_10
+Compiling architecture behavioral of entity reg_dividendo [\reg_dividendo(6)\]
+Compiling architecture behavioral of entity reg_divisor [\reg_divisor(6)\]
+Compiling architecture behavioral of entity reg_c [\reg_c(6)\]
+Compiling architecture behavioral of entity reg [\reg(6)\]
+Compiling architecture behavioral of entity mux [\mux(6)\]
+Compiling architecture behavioral of entity alu [\alu(6)\]
+Compiling architecture behavioral of entity divider [\divider(6,3)\]
+Compiling architecture behavior of entity simu4b_3_6
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 19 VHDL Units
-Built simulation executable C:/hlocal/TOC/practica4/practica4/simu4b_4_10_isim_beh.exe
-Fuse Memory Usage: 48284 KB
+Built simulation executable C:/hlocal/TOC/practica4/practica4/simu4b_3_6_isim_beh.exe
+Fuse Memory Usage: 48204 KB
 Fuse CPU Usage: 514 ms

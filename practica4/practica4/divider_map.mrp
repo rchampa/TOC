@@ -9,38 +9,38 @@ Target Device  : xc3s1000
 Target Package : ft256
 Target Speed   : -5
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Wed Dec 03 16:35:27 2014
+Mapped Date    : Wed Dec 03 19:57:39 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    9
+Number of warnings:    1
 Logic Utilization:
-  Total Number Slice Registers:          77 out of  15,360    1%
-    Number used as Flip Flops:           62
-    Number used as Latches:              15
-  Number of 4 input LUTs:                84 out of  15,360    1%
+  Total Number Slice Registers:          60 out of  15,360    1%
+    Number used as Flip Flops:           59
+    Number used as Latches:               1
+  Number of 4 input LUTs:                90 out of  15,360    1%
 Logic Distribution:
-  Number of occupied Slices:             72 out of   7,680    1%
-    Number of Slices containing only related logic:      72 out of      72 100%
-    Number of Slices containing unrelated logic:          0 out of      72   0%
+  Number of occupied Slices:             68 out of   7,680    1%
+    Number of Slices containing only related logic:      68 out of      68 100%
+    Number of Slices containing unrelated logic:          0 out of      68   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         109 out of  15,360    1%
-    Number used as logic:                84
-    Number used as a route-thru:         25
+  Total Number of 4 input LUTs:         122 out of  15,360    1%
+    Number used as logic:                90
+    Number used as a route-thru:         32
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 19 out of     173   10%
-    IOB Flip Flops:                       1
-    IOB Latches:                          4
+  Number of bonded IOBs:                 20 out of     173   11%
+    IOB Latches:                          1
+  Number of MULT18X18s:                   1 out of      24    4%
   Number of BUFGMUXs:                     2 out of       8   25%
 
-Average Fanout of Non-Clock Nets:                2.63
+Average Fanout of Non-Clock Nets:                2.43
 
-Peak Memory Usage:  232 MB
-Total REAL time to MAP completion:  0 secs 
+Peak Memory Usage:  233 MB
+Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   0 secs 
 
 NOTES:
@@ -88,33 +88,9 @@ WARNING:Security:44 - Since no license file was found,
 WARNING:Security:42 - Your software subscription period has lapsed. Your current
 version of Xilinx tools will continue to function, but you no longer qualify for
 Xilinx software updates or new releases.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net c_load_or0000 is sourced by
-   a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net divisor_shift_or0000 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net alu_operation_or0000 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net c_shift_or0000 is sourced
+WARNING:PhysDesignRules:372 - Gated clock. Clock net mux_sel_not0001 is sourced
    by a combinatorial pin. This is not good design practice. Use the CE pin to
    control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net STATE_FSM_FFd2-In is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net r_in_or0000 is sourced by a
-   combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ready_or0000 is sourced by
-   a combinatorial pin. This is not good design practice. Use the CE pin to
-   control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net dividendo_load_or0000 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net dividendo_load_mux0000 is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
 
 Section 3 - Informational
 -------------------------
@@ -157,17 +133,18 @@ Section 6 - IOB Properties
 | dividend<3>                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | dividend<4>                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | dividend<5>                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
-| divisor<0>                         | IOB              | INPUT     | LVCMOS25             |       |          |      | INLATCH1     |          | IFD      |
-| divisor<1>                         | IOB              | INPUT     | LVCMOS25             |       |          |      | INLATCH1     |          | IFD      |
-| divisor<2>                         | IOB              | INPUT     | LVCMOS25             |       |          |      | INLATCH1     |          | IFD      |
-| quotient<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          |          |
+| divisor<0>                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| divisor<1>                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| divisor<2>                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| quotient<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | quotient<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | quotient<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | quotient<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | quotient<4>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | quotient<5>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| ready                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
+| ready                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | reset                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| resto                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OLATCH1      |          |          |
 | start                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 

@@ -40,6 +40,7 @@ end reg_divisor;
 
 architecture Behavioral of reg_divisor is
 
+--signal store : std_logic_vector(n downto 0); 
 
 begin
 
@@ -51,6 +52,7 @@ begin
 				data_out <= (OTHERS =>'0');
 			elsif	load='1'	then	
 				data_out <= data_in;	
+				--store <= data_in;
 			elsif	right_shift='1'	then	
 				data_out <= ('0' & data_out(n downto 1));
 			else

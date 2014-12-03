@@ -18,8 +18,8 @@ NET dividend<3> LOC=H1;
 NET dividend<2> LOC=H3;
 NET dividend<1> LOC=G2;
 NET dividend<0> LOC=K15;
-#NET B<2> LOC=K16;
-#NET B<3> LOC=F15;
+NET reset LOC=K16;
+NET start LOC=F15;
 
 #
 	#push buttons placa superior
@@ -27,24 +27,24 @@ NET dividend<0> LOC=K15;
 #NET SW3 LOC=A13; 
 
 	# Push button placa extendida
-NET reset LOC=H4;
-NET start LOC=L5;
-#NET pushb3 LOC=N2;
-#NET pushb4 LOC=M3;
+#NET reset LOC=H4;
+#NET start LOC=L5;
+#NET reset LOC=N2;
+#NET start LOC=M3;
 
 
 #barra de leds placa extendida
 
-#NET ready LOC=L5;
-NET ready LOC=N2;
+NET ready LOC=L5;
+NET resto LOC=N2;
 #NET C<2> LOC=M3;
-#NET C<3> LOC=N1;
-NET quotient<5> LOC=T13;
-NET quotient<4> LOC=L15;
-NET quotient<3> LOC=J13;
-NET quotient<2> LOC=H15;
-NET quotient<1> LOC=J16;
-NET quotient<0> LOC=J14;
+NET quotient<5> LOC=N1;
+NET quotient<4> LOC=T13;
+NET quotient<3> LOC=L15;
+NET quotient<2> LOC=J13;
+NET quotient<1> LOC=H15;
+NET quotient<0> LOC=J16;
+#NET ready LOC=J14;
 
  
 

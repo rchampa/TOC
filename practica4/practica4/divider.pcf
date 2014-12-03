@@ -1,24 +1,25 @@
 //! **************************************************************************
-// Written by: Map P.15xf on Wed Dec 03 16:35:28 2014
+// Written by: Map P.15xf on Wed Dec 03 19:57:39 2014
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "dividend<3>" LOCATE = SITE "H1" LEVEL 1;
 COMP "dividend<4>" LOCATE = SITE "J1" LEVEL 1;
-COMP "ready" LOCATE = SITE "N2" LEVEL 1;
 COMP "dividend<5>" LOCATE = SITE "P12" LEVEL 1;
+COMP "ready" LOCATE = SITE "L5" LEVEL 1;
 COMP "clk" LOCATE = SITE "T9" LEVEL 1;
 COMP "divisor<0>" LOCATE = SITE "K2" LEVEL 1;
 COMP "divisor<1>" LOCATE = SITE "K3" LEVEL 1;
 COMP "divisor<2>" LOCATE = SITE "K4" LEVEL 1;
-COMP "quotient<0>" LOCATE = SITE "J14" LEVEL 1;
-COMP "quotient<1>" LOCATE = SITE "J16" LEVEL 1;
-COMP "quotient<2>" LOCATE = SITE "H15" LEVEL 1;
-COMP "quotient<3>" LOCATE = SITE "J13" LEVEL 1;
-COMP "quotient<4>" LOCATE = SITE "L15" LEVEL 1;
-COMP "quotient<5>" LOCATE = SITE "T13" LEVEL 1;
-COMP "start" LOCATE = SITE "L5" LEVEL 1;
-COMP "reset" LOCATE = SITE "H4" LEVEL 1;
+COMP "quotient<0>" LOCATE = SITE "J16" LEVEL 1;
+COMP "quotient<1>" LOCATE = SITE "H15" LEVEL 1;
+COMP "quotient<2>" LOCATE = SITE "J13" LEVEL 1;
+COMP "quotient<3>" LOCATE = SITE "L15" LEVEL 1;
+COMP "quotient<4>" LOCATE = SITE "T13" LEVEL 1;
+COMP "quotient<5>" LOCATE = SITE "N1" LEVEL 1;
+COMP "start" LOCATE = SITE "F15" LEVEL 1;
+COMP "reset" LOCATE = SITE "K16" LEVEL 1;
+COMP "resto" LOCATE = SITE "N2" LEVEL 1;
 COMP "dividend<0>" LOCATE = SITE "K15" LEVEL 1;
 COMP "dividend<1>" LOCATE = SITE "G2" LEVEL 1;
 COMP "dividend<2>" LOCATE = SITE "H3" LEVEL 1;

@@ -2,12 +2,12 @@ Command line:
    simu4b_3_6_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  2123
+     -socket  2563
 
-Wed Dec 03 17:12:13 2014
+Wed Dec 03 19:36:08 2014
 
 
- Elaboration Time: 0.0156 sec
+ Elaboration Time: 0.0468 sec
 
  Current Memory Usage: 826.47 Meg
 
@@ -20,9 +20,9 @@ Wed Dec 03 17:12:13 2014
  Total Traceable Variables  : 22
  Total Scalar Nets and Variables : 650
 
- Total Simulation Time: 0.078 sec
+ Total Simulation Time: 0.1092 sec
 
  Current Memory Usage: 826.47 Meg
 
-Wed Dec 03 17:12:31 2014
+Wed Dec 03 19:38:17 2014
 
