@@ -153,7 +153,7 @@ signal cmp_A: std_logic_vector(n downto 0);
 signal cmp_B: std_logic_vector(n downto 0);
 signal cmp_salida: std_logic_vector(1 downto 0);
 
-type STATES is (S1, S2, S3, S4, S5, S6, S7, S8, S9); -- similar al enum de java
+type STATES is (S1, S2, S3, S4, S5, S6, S7, S8); -- similar al enum de java
 signal STATE, NEXT_STATE: STATES;
 begin
 
