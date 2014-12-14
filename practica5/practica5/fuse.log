@@ -1,0 +1,20 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/test_reg_contador_isim_beh.exe -prj C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/test_reg_contador_beh.prj work.test_reg_contador 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/recursos/reg_contador.vhd" into library work
+Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/recursos/test_reg_contador.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity reg_contador [\reg_contador(6)\]
+Compiling architecture behavioral of entity test_reg_contador
+Time Resolution for simulation is 1ps.
+Compiled 7 VHDL Units
+Built simulation executable C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/test_reg_contador_isim_beh.exe
+Fuse Memory Usage: 32372 KB
+Fuse CPU Usage: 484 ms
