@@ -41,10 +41,28 @@ end black_jack;
 architecture Behavioral of black_jack is
 
 
-	component conv_7seg is
-	Port ( 
-		x : in  STD_LOGIC_VECTOR (3 downto 0);
-      display : out  STD_LOGIC_VECTOR (6 downto 0)
+--	component conv_7seg is
+--	Port ( 
+--		x : in  STD_LOGIC_VECTOR (3 downto 0);
+--      display : out  STD_LOGIC_VECTOR (6 downto 0)
+--	);
+--	end component;
+	
+	component alu is
+	generic (N: natural:=6);
+	port (
+		A: in std_logic_vector(n-1 downto 0);
+		B: in std_logic_vector(n-1 downto 0);
+		data_out: out std_logic_vector(n-1 downto 0)
+	);
+	end component;
+	
+	component flipflop is
+	port(
+		clk : in std_logic;
+		reset: in std_logic;
+		load: in std_logic;
+		data_out: out std_logic
 	);
 	end component;
 	
@@ -75,15 +93,24 @@ architecture Behavioral of black_jack is
 	);
 	end component;
 
-	type STATES is (S1, S2, S3, S4, S5, S6, S7, S8); -- similar al enum de java
+	type STATES is (S1, S2, S3, S4, S5, S6, S7, S8, S9); -- similar al enum de java
 	signal STATE, NEXT_STATE: STATES;
 	
 	
-	signal conv_x1 : std_logic(3 downto 0);
-	signal conv_display1: std_logic_vector(6 downto 0);
+--	signal conv_x : std_logic(3 downto 0);
+--	signal conv_display: std_logic_vector(6 downto 0);
+
+	signal flip_derrota_load : std_logic;
+	signal flip_derrota_reset : std_logic;
+	signal flip_derrota_out : std_logic;
 	
-	signal conv_x2 : std_logic(3 downto 0);
-	signal conv_display2: std_logic_vector(6 downto 0);
+	signal flip_carta_load : std_logic;
+	signal flip_carta_reset : std_logic;
+	signal flip_carta_out : std_logic;
+
+	signal alu_a: std_logic_vector(5 downto 0);
+	signal alu_b: std_logic_vector(5 downto 0);
+	signal alu_out: std_logic_vector(5 downto 0);
 	
 	signal rams_we : std_logic(3 downto 0);
 	signal rams_addr: std_logic_vector(5 downto 0);
@@ -94,10 +121,10 @@ architecture Behavioral of black_jack is
 	--signal contador_reset: std_logic;
 	signal contador_data_out: std_logic_vector(5 downto 0);
 	
-	signal registro_load: std_logic;
+	signal registro_puntuacion_load: std_logic;
 	--signal registro_reset: std_logic;
-	signal registro_data_in: std_logic_vector(5 downto 0);
-	signal registro_data_out: std_logic_vector(5 downto 0);
+	signal registro_puntuacion_data_in: std_logic_vector(5 downto 0);
+	signal registro_puntuacion_data_out: std_logic_vector(5 downto 0);
 	
 	signal registro_carta_load: std_logic;
 	--signal registro_carta_reset: std_logic;
@@ -109,6 +136,8 @@ architecture Behavioral of black_jack is
 	signal boton_jugar: std_logic;
 	signal boton_plantarse: std_logic;
 	
+	signal registro_carta_data_out: std_logic_vector(1 downto 0);
+	
 
 begin
 
@@ -118,12 +147,21 @@ begin
 	boton_jugar <= not jugar;
 	boton_plantarse <= not plantarse;
 	
-
-	u_conv1: conv_7seg 
-	port map (conv_x1,conv_display1);
+	cable_jugada(1) <= boton_plantarse;
+	cable_jugada(0) <= boton_jugar;
 	
-	u_conv2: conv_7seg 
-	port map (conv_x2,conv_display2);
+
+--	u_conv1: conv_7seg 
+--	port map (conv_x,conv_display);
+
+	u_flip1: flipflop
+	port map (clk,flip_derrota_reset,flip_derrota_load,flip_derrota_out);
+	
+	u_flip2: flipflop
+	port map (clk,flip_carta_reset,flip_carta_load,flip_carta_out);
+	
+	u_alu: alu generic map (6) -- m=6, n=4 
+	port map (clk,rams_we,rams_addr,rams_di,rams_do);
 	
 	u_rams: rams generic map (6,4) -- m=6, n=4 
 	port map (clk,rams_we,rams_addr,rams_di,rams_do);
@@ -132,7 +170,7 @@ begin
 	port map (clk,contador_enable,boton_reset,contador_data_out);
 	
 	u_registro_puntuacion: registro generic map (6) 
-	port map (clk,registro_load,boton_reset,registro_data_in,registro_data_out);
+	port map (clk,registro_puntuacion_load,boton_reset,registro_puntuacion_data_in,registro_puntuacion_data_out);
 	
 	u_registro_carta: registro generic map (6) 
 	port map (clk,registro_carta_load,boton_reset,registro_carta_data_in,registro_carta_data_out);
@@ -150,9 +188,19 @@ begin
 	end process SYNC;
 	
 	
-	--registro_data_out;
+	--ruta de datos
 	
-	COMB_MAIN: process(STATE,start)
+	carta_incorrecta <= flip_carta_out;
+	led_derrota <= flip_derrota_out;
+	
+	rams_addr <= contador_data_out;
+	registro_carta_data_in <= rams_do;
+	alu_a <= registro_carta_data_out;
+	alu_b <= registro_puntuacion_data_out;
+	registro_puntuacion_data_in <= alu_out;
+	
+	
+	COMB_MAIN: process(STATE,boton_comenzar)
 	begin
 		case STATE is
 			when S1 =>
@@ -166,8 +214,39 @@ begin
 				
 			when S2 =>
 				led_derrota <= '0';
-				registro_load <= '1';
-				registro_data_in <= (OTHERS => '0');
+				registro_puntuacion_load <= '1';
+				registro_puntuacion_data_in <= (OTHERS => '0');
+				contador_enable <= '1';
+				
+			when S3 =>
+				if cable_jugada = "01" then --jugar
+					NEXT_STATE <= S5;
+				elsif cable_jugada = "10" then --plantarse
+					NEXT_STATE <= S4;
+				else
+					NEXT_STATE <= S3;
+				end if;
+				
+			when S4 =>
+				contador_enable <= '0';
+				NEXT_STATE <= S1;
+				
+			when S5 =>
+				if cable_jugada = "10" then --jugar
+					NEXT_STATE <= S5;
+				else
+					NEXT_STATE <= S6; -- ha soltado el boton
+				end if;
+				
+			when S6 =>
+				contador_enable <= '0';
+				rams_we <= '1';
+				carta_incorrecta <= '0';
+				NEXT_STATE <= S7;
+			
+			when S7 =>
+				registro_carta_load <= '1';
+				--registro_puntuacion_load <= '1';
 				
 			when OTHERS =>
 				NEXT_STATE <= S1;
