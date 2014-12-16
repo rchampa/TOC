@@ -49,11 +49,21 @@ architecture Behavioral of black_jack is
 --	end component;
 	
 	component alu is
-	generic (N: natural:=6);
+	generic (n: natural:=6);
 	port (
 		A: in std_logic_vector(n-1 downto 0);
 		B: in std_logic_vector(n-1 downto 0);
 		data_out: out std_logic_vector(n-1 downto 0)
+	);
+	end component;
+	
+	component mux is
+	generic (n: natural:=6);
+	port (
+		x: in std_logic_vector (n-1 downto 0);
+	   y: in std_logic_vector (n-1 downto 0);
+		z: in std_logic;
+		do: out std_logic_vector (n-1 downto 0)
 	);
 	end component;
 	
@@ -100,6 +110,11 @@ architecture Behavioral of black_jack is
 --	signal conv_x : std_logic(3 downto 0);
 --	signal conv_display: std_logic_vector(6 downto 0);
 
+	signal mux_x: std_logic_vector(5 downto 0);
+	signal mux_y: std_logic_vector(5 downto 0);
+	signal mux_z: std_logic;
+	signal mux_data_out: std_logic_vector(5 downto 0);
+
 	signal flip_derrota_load : std_logic;
 	signal flip_derrota_reset : std_logic;
 	signal flip_derrota_out : std_logic;
@@ -138,8 +153,12 @@ architecture Behavioral of black_jack is
 	
 	signal registro_carta_data_out: std_logic_vector(1 downto 0);
 	
+	signal veinte_y_uno: std_logic_vector(5 downto 0);
+	
 
 begin
+
+	veinte_y_uno <= "10101"; -- 21
 
 	-- cambiando botones a la alta
 	boton_reset <= not reset;
@@ -154,6 +173,9 @@ begin
 --	u_conv1: conv_7seg 
 --	port map (conv_x,conv_display);
 
+	u_mux: mux
+	port map (mux_x,mux_y,mux_z,mux_data_out);
+	
 	u_flip1: flipflop
 	port map (clk,flip_derrota_reset,flip_derrota_load,flip_derrota_out);
 	
@@ -194,10 +216,13 @@ begin
 	led_derrota <= flip_derrota_out;
 	
 	rams_addr <= contador_data_out;
+	rams_data_in <= (Others=>'0');
+	mux_x <= (Others=>'0');
+	mux_y <= alu_out;
 	registro_carta_data_in <= rams_do;
 	alu_a <= registro_carta_data_out;
 	alu_b <= registro_puntuacion_data_out;
-	registro_puntuacion_data_in <= alu_out;
+	registro_puntuacion_data_in <= mux_data_out;
 	
 	
 	COMB_MAIN: process(STATE,boton_comenzar)
@@ -213,9 +238,11 @@ begin
 			
 				
 			when S2 =>
-				led_derrota <= '0';
+				rams_we <= '0';
+				flip_derrota_reset <= '1';
+				flip_carta_reset <= '1';
+				mux_z <= '0'; -- puntuacion carga 0
 				registro_puntuacion_load <= '1';
-				registro_puntuacion_data_in <= (OTHERS => '0');
 				contador_enable <= '1';
 				
 			when S3 =>
@@ -227,26 +254,46 @@ begin
 					NEXT_STATE <= S3;
 				end if;
 				
-			when S4 =>
+			when S4 => --Se planta
 				contador_enable <= '0';
 				NEXT_STATE <= S1;
 				
 			when S5 =>
-				if cable_jugada = "10" then --jugar
+				if cable_jugada = "01" then -- sigue pulsando jugar
 					NEXT_STATE <= S5;
 				else
 					NEXT_STATE <= S6; -- ha soltado el boton
 				end if;
 				
 			when S6 =>
-				contador_enable <= '0';
-				rams_we <= '1';
-				carta_incorrecta <= '0';
+				rams_we <= '0';
+				flip_carta_load <= '1';
+				contador_enable <= '0'; -- paro el contador
+				registro_carta_load <= '1'; -- cargo la carta para el sgte estado
 				NEXT_STATE <= S7;
 			
 			when S7 =>
-				registro_carta_load <= '1';
-				--registro_puntuacion_load <= '1';
+				mux_z <= '1';
+				registro_puntuacion_load <= '1';
+				
+				if unsigned(registro_puntuacion_data_out) <= unsigned(veinte_y_uno) then
+					NEXT_STATE <= S3; -- sigue jugando
+				elsif unsigned(registro_puntuacion_data_out) > unsigned(veinte_y_uno) then
+					NEXT_STATE <= S8; -- derrota
+				elsif unsigned(registro_puntuacion_data_out) = 0 then
+					NEXT_STATE <= S9; -- carta error
+				else
+					NEXT_STATE <= S7; -- nada
+				end if;
+				
+			when S8 =>
+				flip_derrota_load <= '1';
+				NEXT_STATE <= S1;
+				
+			when S9 =>
+				flip_error_load <= '1';
+				NEXT_STATE <= S3;
+				
 				
 			when OTHERS =>
 				NEXT_STATE <= S1;
