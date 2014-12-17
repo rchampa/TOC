@@ -1,4 +1,4 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/hlocal/TOC/practica5/practica5/test_black_jack_isim_beh.exe" -prj "C:/hlocal/TOC/practica5/practica5/test_black_jack_beh.prj" "work.test_black_jack" 
+Running: C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/hlocal/TOC/practica5/practica5/test_black_jack_isim_beh.exe -prj C:/hlocal/TOC/practica5/practica5/test_black_jack_beh.prj work.test_black_jack 
 ISim P.15xf (signature 0xc3576ebc)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
@@ -30,8 +30,7 @@ Compiling architecture behavioral of entity registro [\registro(4)\]
 Compiling architecture behavioral of entity black_jack [black_jack_default]
 Compiling architecture behavioral of entity test_black_jack
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 24 VHDL Units
 Built simulation executable C:/hlocal/TOC/practica5/practica5/test_black_jack_isim_beh.exe
-Fuse Memory Usage: 38096 KB
-Fuse CPU Usage: 530 ms
+Fuse Memory Usage: 37768 KB
+Fuse CPU Usage: 499 ms

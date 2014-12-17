@@ -2,9 +2,9 @@ Command line:
    test_black_jack_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  1484
+     -socket  1524
 
-Wed Dec 17 17:50:21 2014
+Wed Dec 17 18:23:16 2014
 
 
- Elaboration Time: 0.0156 sec
+ Elaboration Time: 0.0312 sec

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.15xf on Wed Dec 17 17:49:32 2014
+// Written by: Map P.15xf on Wed Dec 17 19:55:13 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -8,11 +8,18 @@ COMP "clk" LOCATE = SITE "T9" LEVEL 1;
 COMP "jugar" LOCATE = SITE "H4" LEVEL 1;
 COMP "carta_incorrecta" LOCATE = SITE "L5" LEVEL 1;
 COMP "puntuacion<0>" LOCATE = SITE "J14" LEVEL 1;
+COMP "estado_seg<0>" LOCATE = SITE "E2" LEVEL 1;
 COMP "puntuacion<1>" LOCATE = SITE "J16" LEVEL 1;
+COMP "estado_seg<1>" LOCATE = SITE "E1" LEVEL 1;
 COMP "puntuacion<2>" LOCATE = SITE "H15" LEVEL 1;
+COMP "estado_seg<2>" LOCATE = SITE "F3" LEVEL 1;
 COMP "puntuacion<3>" LOCATE = SITE "J13" LEVEL 1;
+COMP "estado_seg<3>" LOCATE = SITE "F2" LEVEL 1;
 COMP "puntuacion<4>" LOCATE = SITE "L15" LEVEL 1;
+COMP "estado_seg<4>" LOCATE = SITE "G4" LEVEL 1;
 COMP "puntuacion<5>" LOCATE = SITE "T13" LEVEL 1;
+COMP "estado_seg<5>" LOCATE = SITE "G3" LEVEL 1;
+COMP "estado_seg<6>" LOCATE = SITE "G1" LEVEL 1;
 COMP "reset" LOCATE = SITE "P12" LEVEL 1;
 COMP "display<0>" LOCATE = SITE "H14" LEVEL 1;
 COMP "display<1>" LOCATE = SITE "M4" LEVEL 1;

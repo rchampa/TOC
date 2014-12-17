@@ -86,10 +86,10 @@ NET display<6> LOC=G16;
 
 #Display 7-segmentos de la parte derecha de la placa extendida
 
-#NET displayd<0> loc=E2;
-#NET displayd<1> loc=E1;
-#NET displayd<2> loc=F3;
-#NET displayd<3> loc=F2;
-#NET displayd<4> loc=G4;
-#NET displayd<5> loc=G3;
-#NET displayd<6> loc=G1;
+NET estado_seg<0> loc=E2;
+NET estado_seg<1> loc=E1;
+NET estado_seg<2> loc=F3;
+NET estado_seg<3> loc=F2;
+NET estado_seg<4> loc=G4;
+NET estado_seg<5> loc=G3;
+NET estado_seg<6> loc=G1;

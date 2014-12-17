@@ -1,51 +1,65 @@
-V3 31
+V3 39
 FL C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd 2014/12/17.15:34:49 P.15xf
-EN work/alu 1418834966 FL C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd \
+EN work/alu 1418842509 FL C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627
-AR work/alu/Behavioral 1418834967 \
-      FL C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd EN work/alu 1418834966
-FL C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd 2014/12/17.17:48:58 P.15xf
-EN work/black_jack 1418834974 \
+AR work/alu/Behavioral 1418842510 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd EN work/alu 1418842509
+FL C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd 2014/12/17.19:54:57 P.15xf
+EN work/black_jack 1418842519 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627
-AR work/black_jack/Behavioral 1418834975 \
+AR work/black_jack/Behavioral 1418842520 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd \
-      EN work/black_jack 1418834974 CP conv_7seg CP mux CP flipflop CP alu CP rams \
-      CP reg_contador CP registro
+      EN work/black_jack 1418842519 CP clk_divider CP conv_7seg CP mux CP flipflop \
+      CP alu CP rams CP reg_contador CP reg_puntuacion CP registro
+FL C:/hlocal/TOC/practica5/practica5/recursos/clk_divider.vhd 2014/12/17.19:21:19 P.15xf
+EN work/clk_divider 1418842501 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/clk_divider.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625
+AR work/clk_divider/divider_arch 1418842502 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/clk_divider.vhd \
+      EN work/clk_divider 1418842501
 FL C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd 2014/12/17.15:34:49 P.15xf
-EN work/conv_7seg 1418834960 \
+EN work/conv_7seg 1418842503 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd \
       PB ieee/std_logic_1164 1335251622
-AR work/conv_7seg/Behavioral 1418834961 \
+AR work/conv_7seg/Behavioral 1418842504 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd \
-      EN work/conv_7seg 1418834960
+      EN work/conv_7seg 1418842503
 FL C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd 2014/12/17.15:34:49 P.15xf
-EN work/flipflop 1418834964 \
+EN work/flipflop 1418842507 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd \
       PB ieee/std_logic_1164 1335251622
-AR work/flipflop/Behavioral 1418834965 \
-      FL C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd EN work/flipflop 1418834964
+AR work/flipflop/Behavioral 1418842508 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd EN work/flipflop 1418842507
 FL C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd 2014/12/17.15:34:49 P.15xf
-EN work/mux 1418834962 FL C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd \
+EN work/mux 1418842505 FL C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd \
       PB ieee/std_logic_1164 1335251622
-AR work/mux/Behavioral 1418834963 \
-      FL C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd EN work/mux 1418834962
+AR work/mux/Behavioral 1418842506 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd EN work/mux 1418842505
 FL C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd 2014/12/17.15:34:49 P.15xf
-EN work/rams 1418834968 FL C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd \
+EN work/rams 1418842511 FL C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/std_logic_arith 1335251623 \
       PB ieee/STD_LOGIC_UNSIGNED 1335251625
-AR work/rams/circuito 1418834969 \
-      FL C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd EN work/rams 1418834968
+AR work/rams/circuito 1418842512 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd EN work/rams 1418842511
 FL C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd 2014/12/17.15:34:49 P.15xf
-EN work/registro 1418834972 \
+EN work/registro 1418842517 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd \
       PB ieee/std_logic_1164 1335251622
-AR work/registro/Behavioral 1418834973 \
-      FL C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd EN work/registro 1418834972
+AR work/registro/Behavioral 1418842518 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd EN work/registro 1418842517
 FL C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd 2014/12/17.15:34:49 P.15xf
-EN work/reg_contador 1418834970 \
+EN work/reg_contador 1418842513 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625
-AR work/reg_contador/Behavioral 1418834971 \
+AR work/reg_contador/Behavioral 1418842514 \
       FL C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd \
-      EN work/reg_contador 1418834970
+      EN work/reg_contador 1418842513
+FL C:/hlocal/TOC/practica5/practica5/recursos/reg_puntacion.vhd 2014/12/17.19:50:05 P.15xf
+EN work/reg_puntuacion 1418842515 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/reg_puntacion.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627
+AR work/reg_puntuacion/Behavioral 1418842516 \
+      FL C:/hlocal/TOC/practica5/practica5/recursos/reg_puntacion.vhd \
+      EN work/reg_puntuacion 1418842515

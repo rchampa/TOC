@@ -1,7 +1,7 @@
 Release 14.1 par P.15xf (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-PTO0702::  Wed Dec 17 17:49:34 2014
+PTO0702::  Wed Dec 17 19:55:15 2014
 
 par -w -intstyle ise -ol high -t 1 black_jack_map.ncd black_jack.ncd
 black_jack.pcf 
@@ -41,11 +41,11 @@ Device speed data version:  "PRODUCTION 1.39 2012-04-23".
 
 Device Utilization Summary:
 
-   Number of BUFGMUXs                        1 out of 8      12%
-   Number of External IOBs                  24 out of 173    13%
-      Number of LOCed IOBs                  20 out of 24     83%
+   Number of BUFGMUXs                        2 out of 8      25%
+   Number of External IOBs                  33 out of 173    19%
+      Number of LOCed IOBs                  27 out of 33     81%
 
-   Number of Slices                         40 out of 7680    1%
+   Number of Slices                         89 out of 7680    1%
       Number of SLICEMs                      8 out of 3840    1%
 
 
@@ -64,42 +64,43 @@ Total REAL time at the beginning of Placer: 1 secs
 Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:44e33f50) REAL time: 1 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:39164dbb) REAL time: 1 secs 
 
 Phase 2.7  Design Feasibility Check
-INFO:Place:834 - Only a subset of IOs are locked. Out of 24 IOs, 20 are locked and 4 are not locked. If you would like
+INFO:Place:834 - Only a subset of IOs are locked. Out of 33 IOs, 27 are locked and 6 are not locked. If you would like
    to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:44e33f50) REAL time: 1 secs 
+Phase 2.7  Design Feasibility Check (Checksum:39164dbb) REAL time: 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:44e33f50) REAL time: 1 secs 
+Phase 3.31  Local Placement Optimization (Checksum:39164dbb) REAL time: 1 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 .....
-Phase 4.2  Initial Clock and IO Placement (Checksum:94dabe50) REAL time: 1 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:5d314af3) REAL time: 1 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:94dabe50) REAL time: 1 secs 
+Phase 5.36  Local Placement Optimization (Checksum:5d314af3) REAL time: 1 secs 
 
 Phase 6.3  Local Placement Optimization
-.....
-Phase 6.3  Local Placement Optimization (Checksum:96e7a5c) REAL time: 1 secs 
+....
+Phase 6.3  Local Placement Optimization (Checksum:5d84fbbb) REAL time: 1 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:96e7a5c) REAL time: 1 secs 
+Phase 7.5  Local Placement Optimization (Checksum:5d84fbbb) REAL time: 1 secs 
 
 Phase 8.8  Global Placement
 ...
-Phase 8.8  Global Placement (Checksum:1063ce61) REAL time: 2 secs 
+...
+Phase 8.8  Global Placement (Checksum:bc99d781) REAL time: 2 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:1063ce61) REAL time: 2 secs 
+Phase 9.5  Local Placement Optimization (Checksum:bc99d781) REAL time: 2 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:5f015a19) REAL time: 2 secs 
+Phase 10.18  Placement Optimization (Checksum:b0737ec) REAL time: 2 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:5f015a19) REAL time: 2 secs 
+Phase 11.5  Local Placement Optimization (Checksum:b0737ec) REAL time: 2 secs 
 
 Total REAL time to Placer completion: 2 secs 
 Total CPU  time to Placer completion: 2 secs 
@@ -110,13 +111,13 @@ Writing design to file black_jack.ncd
 Starting Router
 
 
-Phase  1  : 352 unrouted;      REAL time: 2 secs 
+Phase  1  : 665 unrouted;      REAL time: 2 secs 
 
-Phase  2  : 313 unrouted;      REAL time: 2 secs 
+Phase  2  : 612 unrouted;      REAL time: 2 secs 
 
-Phase  3  : 39 unrouted;      REAL time: 2 secs 
+Phase  3  : 83 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 57 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  4  : 132 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
@@ -124,15 +125,15 @@ Updating file: black_jack.ncd with current fully routed design.
 
 Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 4 secs 
 
-Total REAL time to Router completion: 3 secs 
+Total REAL time to Router completion: 4 secs 
 Total CPU time to Router completion: 3 secs 
 
 Partition Implementation Status
@@ -151,7 +152,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |      BUFGMUX0| No   |   30 |  0.183     |  0.913      |
+| nuevo_rejoj/clk_aux |      BUFGMUX3| No   |   29 |  0.211     |  0.833      |
++---------------------+--------------+------+------+------------+-------------+
+|           clk_BUFGP |      BUFGMUX0| No   |   14 |  0.085     |  0.747      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -171,8 +174,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     3.912ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.702ns|            |       0|           0
+  Autotimespec constraint for clock net nue | SETUP       |         N/A|     5.011ns|     N/A|           0
+  vo_rejoj/clk_aux                          | HOLD        |     0.728ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     5.058ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.980ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -188,10 +194,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 3 secs 
-Total CPU time to PAR completion: 3 secs 
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion: 4 secs 
 
-Peak Memory Usage:  269 MB
+Peak Memory Usage:  273 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
