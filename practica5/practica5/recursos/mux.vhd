@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    18:11:17 12/15/2014 
+-- Create Date:    19:31:06 12/16/2014 
 -- Design Name: 
--- Module Name:    flipflop - Behavioral 
+-- Module Name:    mux - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,35 +29,23 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity flipflop is
-	port(
-		clk : in std_logic;
-		reset: in std_logic;
-		load: in std_logic;
-		data_out: out std_logic
+entity mux is
+	generic (n: natural := 6);
+	port (
+		x: in std_logic_vector (n-1 downto 0);
+	   y: in std_logic_vector (n-1 downto 0);
+		z: in std_logic;
+		do: out std_logic_vector (n-1 downto 0)
 	);
-end flipflop;
+end mux;
 
-architecture Behavioral of flipflop is
-
-	signal data: std_logic := '0';
+architecture Behavioral of mux is
 
 begin
 
-	SYNC: process(clk)
-	begin
-		if clk'event and clk='1' then 
-			if reset = '1' then
-				data <= '0';
-			elsif	load='1'	then	
-				data <= '1';
-			end if;
-		end if;
-		
-	end process SYNC;
-
-	data_out <= data;
-	
+	do <=	x when z='0' else
+			y when z='1' else
+			(others => '0');
 
 end Behavioral;
 

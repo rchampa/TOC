@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -34,7 +34,7 @@ entity black_jack is
 		clk,reset,comenzar,jugar,plantarse: in std_logic;
 		carta_incorrecta,led_derrota: out std_logic;
 		carta : out std_logic_vector (3 downto 0);--4 leds
-		puntuacion: out std_logic_vector (6 downto 0)
+		puntuacion: out std_logic_vector (5 downto 0)
 	);
 end black_jack;
 
@@ -49,11 +49,11 @@ architecture Behavioral of black_jack is
 --	end component;
 	
 	component alu is
-	generic (n: natural:=6);
-	port (
+	generic (n: natural := 6; m: natural:= 6);
+	port(
 		A: in std_logic_vector(n-1 downto 0);
-		B: in std_logic_vector(n-1 downto 0);
-		data_out: out std_logic_vector(n-1 downto 0)
+		B: in std_logic_vector(m-1 downto 0);
+		data_out: out std_logic_vector(m-1 downto 0)
 	);
 	end component;
 	
@@ -103,7 +103,7 @@ architecture Behavioral of black_jack is
 	);
 	end component;
 
-	type STATES is (S1, S2, S3, S4, S5, S6, S7, S8, S9); -- similar al enum de java
+	type STATES is (S1, S2, S3, S4, S5, S6, S7, S77, S8, S9); -- similar al enum de java
 	signal STATE, NEXT_STATE: STATES;
 	
 	
@@ -123,11 +123,11 @@ architecture Behavioral of black_jack is
 	signal flip_carta_reset : std_logic;
 	signal flip_carta_out : std_logic;
 
-	signal alu_a: std_logic_vector(5 downto 0);
+	signal alu_a: std_logic_vector(3 downto 0);
 	signal alu_b: std_logic_vector(5 downto 0);
 	signal alu_out: std_logic_vector(5 downto 0);
 	
-	signal rams_we : std_logic(3 downto 0);
+	signal rams_we : std_logic;
 	signal rams_addr: std_logic_vector(5 downto 0);
 	signal rams_di: std_logic_vector(3 downto 0);
 	signal rams_do: std_logic_vector(3 downto 0);
@@ -143,22 +143,22 @@ architecture Behavioral of black_jack is
 	
 	signal registro_carta_load: std_logic;
 	--signal registro_carta_reset: std_logic;
-	signal registro_carta_data_in: std_logic_vector(5 downto 0);
-	signal registro_carta_data_out: std_logic_vector(5 downto 0);
+	signal registro_carta_data_in: std_logic_vector(3 downto 0);
+	signal registro_carta_data_out: std_logic_vector(3 downto 0);
 	
 	signal boton_reset: std_logic;
 	signal boton_comenzar: std_logic;
 	signal boton_jugar: std_logic;
 	signal boton_plantarse: std_logic;
 	
-	signal registro_carta_data_out: std_logic_vector(1 downto 0);
+	signal cable_jugada: std_logic_vector(1 downto 0);
 	
 	signal veinte_y_uno: std_logic_vector(5 downto 0);
 	
 
 begin
 
-	veinte_y_uno <= "10101"; -- 21
+	veinte_y_uno <= "010101"; -- 21
 
 	-- cambiando botones a la alta
 	boton_reset <= not reset;
@@ -177,13 +177,13 @@ begin
 	port map (mux_x,mux_y,mux_z,mux_data_out);
 	
 	u_flip1: flipflop
-	port map (clk,flip_derrota_reset,flip_derrota_load,flip_derrota_out);
+	port map (clk,flip_derrota_reset or boton_reset,flip_derrota_load,flip_derrota_out);
 	
 	u_flip2: flipflop
-	port map (clk,flip_carta_reset,flip_carta_load,flip_carta_out);
+	port map (clk,flip_carta_reset or boton_reset,flip_carta_load,flip_carta_out);
 	
-	u_alu: alu generic map (6) -- m=6, n=4 
-	port map (clk,rams_we,rams_addr,rams_di,rams_do);
+	u_alu: alu generic map (4,6) -- n=4,m=6 
+	port map (alu_a,alu_b,alu_out);
 	
 	u_rams: rams generic map (6,4) -- m=6, n=4 
 	port map (clk,rams_we,rams_addr,rams_di,rams_do);
@@ -194,13 +194,13 @@ begin
 	u_registro_puntuacion: registro generic map (6) 
 	port map (clk,registro_puntuacion_load,boton_reset,registro_puntuacion_data_in,registro_puntuacion_data_out);
 	
-	u_registro_carta: registro generic map (6) 
+	u_registro_carta: registro generic map (4) 
 	port map (clk,registro_carta_load,boton_reset,registro_carta_data_in,registro_carta_data_out);
 	
-	SYNC: process(clk_1Hz)
+	SYNC: process(clk)
 	begin
-		if clk_1Hz'event and clk_1Hz='1' then 
-			if reset ='1' then
+		if clk'event and clk='1' then 
+			if boton_reset ='1' then
 				STATE <= S1;
 			else
 				STATE <= NEXT_STATE;
@@ -216,16 +216,17 @@ begin
 	led_derrota <= flip_derrota_out;
 	
 	rams_addr <= contador_data_out;
-	rams_data_in <= (Others=>'0');
+	rams_di <= (Others=>'0');
 	mux_x <= (Others=>'0');
 	mux_y <= alu_out;
 	registro_carta_data_in <= rams_do;
 	alu_a <= registro_carta_data_out;
 	alu_b <= registro_puntuacion_data_out;
 	registro_puntuacion_data_in <= mux_data_out;
+	carta <= registro_carta_data_out;
+	puntuacion <= registro_puntuacion_data_out;
 	
-	
-	COMB_MAIN: process(STATE,boton_comenzar)
+	COMB_MAIN: process(STATE,boton_comenzar,cable_jugada)
 	begin
 		case STATE is
 			when S1 =>
@@ -244,8 +245,13 @@ begin
 				mux_z <= '0'; -- puntuacion carga 0
 				registro_puntuacion_load <= '1';
 				contador_enable <= '1';
+				NEXT_STATE <= S3;
 				
 			when S3 =>
+				contador_enable <= '1';
+				rams_we <= '0';
+				registro_puntuacion_load <= '0';
+				registro_carta_load <= '0';
 				if cable_jugada = "01" then --jugar
 					NEXT_STATE <= S5;
 				elsif cable_jugada = "10" then --plantarse
@@ -267,17 +273,18 @@ begin
 				
 			when S6 =>
 				rams_we <= '0';
-				flip_carta_load <= '1';
+				flip_carta_reset <= '1';
 				contador_enable <= '0'; -- paro el contador
-				registro_carta_load <= '1'; -- cargo la carta para el sgte estado
+				registro_carta_load <= '0';
 				NEXT_STATE <= S7;
 			
 			when S7 =>
-				mux_z <= '1';
-				registro_puntuacion_load <= '1';
+				registro_carta_load <= '1'; -- cargo la carta para el sgte estado
+				registro_puntuacion_load <= '0';
 				
 				if unsigned(registro_puntuacion_data_out) <= unsigned(veinte_y_uno) then
-					NEXT_STATE <= S3; -- sigue jugando
+					rams_we <= '1';
+					NEXT_STATE <= S77; -- sigue jugando
 				elsif unsigned(registro_puntuacion_data_out) > unsigned(veinte_y_uno) then
 					NEXT_STATE <= S8; -- derrota
 				elsif unsigned(registro_puntuacion_data_out) = 0 then
@@ -286,12 +293,25 @@ begin
 					NEXT_STATE <= S7; -- nada
 				end if;
 				
+			when S77 =>
+				registro_carta_load <= '0'; 
+				mux_z <= '1';
+				registro_puntuacion_load <= '1';
+				NEXT_STATE <= S3;
+				
 			when S8 =>
+				flip_derrota_reset <= '0';
 				flip_derrota_load <= '1';
+				registro_carta_load <= '0'; 
+				registro_puntuacion_load <= '0';
 				NEXT_STATE <= S1;
 				
 			when S9 =>
-				flip_error_load <= '1';
+				flip_carta_reset <= '0';
+				flip_carta_load <= '1';
+				registro_carta_load <= '0'; 
+				registro_puntuacion_load <= '0';
+				rams_we <= '1';
 				NEXT_STATE <= S3;
 				
 				
