@@ -1,0 +1,8 @@
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\reg_contador.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\registro.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\rams.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\mux.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\flipflop.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\conv_7seg.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\alu.vhd"
+vhdl work "C:\hlocal\TOC\practica5\practica5\recursos\black_jack.vhd"

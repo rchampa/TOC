@@ -34,19 +34,20 @@ entity black_jack is
 		clk,reset,comenzar,jugar,plantarse: in std_logic;
 		carta_incorrecta,led_derrota: out std_logic;
 		carta : out std_logic_vector (3 downto 0);--4 leds
-		puntuacion: out std_logic_vector (5 downto 0)
+		puntuacion: out std_logic_vector (5 downto 0);
+		display : out  STD_LOGIC_VECTOR (6 downto 0)
 	);
 end black_jack;
 
 architecture Behavioral of black_jack is
 
 
---	component conv_7seg is
---	Port ( 
---		x : in  STD_LOGIC_VECTOR (3 downto 0);
---      display : out  STD_LOGIC_VECTOR (6 downto 0)
---	);
---	end component;
+	component conv_7seg is
+	Port ( 
+		x : in  STD_LOGIC_VECTOR (3 downto 0);
+      display : out  STD_LOGIC_VECTOR (6 downto 0)
+	);
+	end component;
 	
 	component alu is
 	generic (n: natural := 6; m: natural:= 6);
@@ -107,8 +108,8 @@ architecture Behavioral of black_jack is
 	signal STATE, NEXT_STATE: STATES;
 	
 	
---	signal conv_x : std_logic(3 downto 0);
---	signal conv_display: std_logic_vector(6 downto 0);
+	signal conv_x : std_logic_vector(3 downto 0);
+	signal conv_display: std_logic_vector(6 downto 0);
 
 	signal mux_x: std_logic_vector(5 downto 0);
 	signal mux_y: std_logic_vector(5 downto 0);
@@ -155,7 +156,8 @@ architecture Behavioral of black_jack is
 	
 	signal veinte_y_uno: std_logic_vector(5 downto 0);
 	
-
+	signal cable_flip_carta: std_logic;
+	signal cable_flip_derrota: std_logic;
 begin
 
 	veinte_y_uno <= "010101"; -- 21
@@ -169,18 +171,20 @@ begin
 	cable_jugada(1) <= boton_plantarse;
 	cable_jugada(0) <= boton_jugar;
 	
-
---	u_conv1: conv_7seg 
---	port map (conv_x,conv_display);
+	cable_flip_derrota <= flip_derrota_reset or boton_reset;
+	cable_flip_carta <= flip_carta_reset or boton_reset;
+	
+	u_conv1: conv_7seg 
+	port map (conv_x,conv_display);
 
 	u_mux: mux
 	port map (mux_x,mux_y,mux_z,mux_data_out);
 	
 	u_flip1: flipflop
-	port map (clk,flip_derrota_reset or boton_reset,flip_derrota_load,flip_derrota_out);
+	port map (clk,cable_flip_derrota,flip_derrota_load,flip_derrota_out);
 	
 	u_flip2: flipflop
-	port map (clk,flip_carta_reset or boton_reset,flip_carta_load,flip_carta_out);
+	port map (clk,cable_flip_carta,flip_carta_load,flip_carta_out);
 	
 	u_alu: alu generic map (4,6) -- n=4,m=6 
 	port map (alu_a,alu_b,alu_out);
@@ -226,11 +230,26 @@ begin
 	carta <= registro_carta_data_out;
 	puntuacion <= registro_puntuacion_data_out;
 	
+	
+	conv_x <= registro_carta_data_out;
+	display <= conv_display;
+	
 	COMB_MAIN: process(STATE,boton_comenzar,cable_jugada)
 	begin
 		case STATE is
 			when S1 =>
 			
+				rams_we <= '0';
+	
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_reset <= '0';
+				flip_carta_load <= '0';
+				mux_z <= '0';
+				contador_enable <= '0';			
+			
+				registro_carta_load <= '0'; 
+				registro_puntuacion_load <= '0';
 				if boton_comenzar = '1' then
 					NEXT_STATE <= S2;
 				else
@@ -241,15 +260,25 @@ begin
 			when S2 =>
 				rams_we <= '0';
 				flip_derrota_reset <= '1';
+				flip_derrota_load <= '0';
 				flip_carta_reset <= '1';
+				flip_carta_load <= '0';
 				mux_z <= '0'; -- puntuacion carga 0
 				registro_puntuacion_load <= '1';
+				registro_carta_load <= '0';
 				contador_enable <= '1';
 				NEXT_STATE <= S3;
 				
 			when S3 =>
-				contador_enable <= '1';
 				rams_we <= '0';
+				contador_enable <= '1';
+				
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_reset <= '0';
+				flip_carta_load <= '0';
+				mux_z <= '0';
+				
 				registro_puntuacion_load <= '0';
 				registro_carta_load <= '0';
 				if cable_jugada = "01" then --jugar
@@ -261,10 +290,30 @@ begin
 				end if;
 				
 			when S4 => --Se planta
+				rams_we <= '0';
 				contador_enable <= '0';
+				
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_reset <= '0';
+				flip_carta_load <= '0';
+				mux_z <= '0';
+				
+				registro_puntuacion_load <= '0';
+				registro_carta_load <= '0';
 				NEXT_STATE <= S1;
 				
 			when S5 =>
+				rams_we <= '0';
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_reset <= '0';
+				flip_carta_load <= '0';
+				mux_z <= '0';
+				contador_enable <= '0'; -- paro el contador
+				
+				registro_carta_load <= '0';
+				registro_puntuacion_load <= '0';
 				if cable_jugada = "01" then -- sigue pulsando jugar
 					NEXT_STATE <= S5;
 				else
@@ -273,49 +322,96 @@ begin
 				
 			when S6 =>
 				rams_we <= '0';
+				
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
 				flip_carta_reset <= '1';
+				flip_carta_load <= '0';
+				mux_z <= '0';
+				
 				contador_enable <= '0'; -- paro el contador
 				registro_carta_load <= '0';
+				registro_puntuacion_load <= '0';
 				NEXT_STATE <= S7;
 			
 			when S7 =>
+				rams_we <= '0';
+				
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_load <= '0';
+				flip_carta_reset <= '0';
+				mux_z <= '0';
+				contador_enable <= '0';
+			
 				registro_carta_load <= '1'; -- cargo la carta para el sgte estado
 				registro_puntuacion_load <= '0';
 				
 				if unsigned(registro_puntuacion_data_out) <= unsigned(veinte_y_uno) then
-					rams_we <= '1';
+					--rams_we <= '1';
 					NEXT_STATE <= S77; -- sigue jugando
 				elsif unsigned(registro_puntuacion_data_out) > unsigned(veinte_y_uno) then
 					NEXT_STATE <= S8; -- derrota
+					
 				elsif unsigned(registro_puntuacion_data_out) = 0 then
 					NEXT_STATE <= S9; -- carta error
+					--rams_we <= '0';
 				else
 					NEXT_STATE <= S7; -- nada
+					--rams_we <= '0';
 				end if;
 				
 			when S77 =>
+				rams_we <= '0';
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_load <= '0';
+				flip_carta_reset <= '0';
+				
 				registro_carta_load <= '0'; 
-				mux_z <= '1';
 				registro_puntuacion_load <= '1';
+				mux_z <= '1';
+				
+				contador_enable <= '0';
 				NEXT_STATE <= S3;
 				
 			when S8 =>
+				rams_we <= '0';
 				flip_derrota_reset <= '0';
 				flip_derrota_load <= '1';
+				flip_carta_load <= '0';
+				flip_carta_reset <= '0';
 				registro_carta_load <= '0'; 
 				registro_puntuacion_load <= '0';
+				mux_z <= '0';
+				contador_enable <= '0';
 				NEXT_STATE <= S1;
 				
 			when S9 =>
+				rams_we <= '1';
+			
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
 				flip_carta_reset <= '0';
 				flip_carta_load <= '1';
 				registro_carta_load <= '0'; 
 				registro_puntuacion_load <= '0';
-				rams_we <= '1';
+				mux_z <= '0';
+				contador_enable <= '0';
+				
 				NEXT_STATE <= S3;
 				
 				
 			when OTHERS =>
+				rams_we <= '0';
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_reset <= '0';
+				flip_carta_load <= '0';
+				registro_carta_load <= '0'; 
+				registro_puntuacion_load <= '0';
+				mux_z <= '0';
+				contador_enable <= '0';
 				NEXT_STATE <= S1;
 				
 		end case;

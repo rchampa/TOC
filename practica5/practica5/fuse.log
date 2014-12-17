@@ -1,20 +1,36 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/test_reg_contador_isim_beh.exe -prj C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/test_reg_contador_beh.prj work.test_reg_contador 
-ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 1
-Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/hlocal/TOC/practica5/practica5/test_black_jack_isim_beh.exe" -prj "C:/hlocal/TOC/practica5/practica5/test_black_jack_beh.prj" "work.test_black_jack" 
+ISim P.15xf (signature 0xc3576ebc)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/recursos/reg_contador.vhd" into library work
-Parsing VHDL file "C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/recursos/test_reg_contador.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/practica5/practica5/recursos/test_black_jack.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package numeric_std
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity conv_7seg [conv_7seg_default]
+Compiling architecture behavioral of entity mux [\mux(6)\]
+Compiling architecture behavioral of entity flipflop [flipflop_default]
+Compiling architecture behavioral of entity alu [\alu(4,6)\]
+Compiling architecture circuito of entity rams [\rams(6,4)\]
 Compiling architecture behavioral of entity reg_contador [\reg_contador(6)\]
-Compiling architecture behavioral of entity test_reg_contador
+Compiling architecture behavioral of entity registro [\registro(6)\]
+Compiling architecture behavioral of entity registro [\registro(4)\]
+Compiling architecture behavioral of entity black_jack [black_jack_default]
+Compiling architecture behavioral of entity test_black_jack
 Time Resolution for simulation is 1ps.
-Compiled 7 VHDL Units
-Built simulation executable C:/Users/RicardoWin7/Documents/git/TOC/practica5/practica5/test_reg_contador_isim_beh.exe
-Fuse Memory Usage: 32372 KB
-Fuse CPU Usage: 484 ms
+Compiled 24 VHDL Units
+Built simulation executable C:/hlocal/TOC/practica5/practica5/test_black_jack_isim_beh.exe
+Fuse Memory Usage: 37820 KB
+Fuse CPU Usage: 467 ms

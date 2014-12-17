@@ -1,0 +1,571 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: black_jack.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "black_jack.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "black_jack"
+Output Format                      : NGC
+Target Device                      : xc3s1000-5-ft256
+
+---- Source Options
+Top Module Name                    : black_jack
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd" in Library work.
+Architecture behavioral of Entity conv_7seg is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd" in Library work.
+Architecture behavioral of Entity mux is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd" in Library work.
+Architecture behavioral of Entity flipflop is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd" in Library work.
+Architecture behavioral of Entity alu is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd" in Library work.
+Architecture circuito of Entity rams is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd" in Library work.
+Architecture behavioral of Entity reg_contador is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd" in Library work.
+Architecture behavioral of Entity registro is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd" in Library work.
+Architecture behavioral of Entity black_jack is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <black_jack> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <conv_7seg> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <mux> in library <work> (architecture <behavioral>) with generics.
+	n = 6
+
+Analyzing hierarchy for entity <flipflop> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <alu> in library <work> (architecture <behavioral>) with generics.
+	m = 6
+	n = 4
+
+Analyzing hierarchy for entity <rams> in library <work> (architecture <circuito>) with generics.
+	M = 6
+	N = 4
+
+Analyzing hierarchy for entity <reg_contador> in library <work> (architecture <behavioral>) with generics.
+	N = 6
+
+Analyzing hierarchy for entity <registro> in library <work> (architecture <behavioral>) with generics.
+	N = 6
+
+Analyzing hierarchy for entity <registro> in library <work> (architecture <behavioral>) with generics.
+	N = 4
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <black_jack> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd" line 237: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <registro_puntuacion_data_out>
+Entity <black_jack> analyzed. Unit <black_jack> generated.
+
+Analyzing Entity <conv_7seg> in library <work> (Architecture <behavioral>).
+Entity <conv_7seg> analyzed. Unit <conv_7seg> generated.
+
+Analyzing generic Entity <mux> in library <work> (Architecture <behavioral>).
+	n = 6
+Entity <mux> analyzed. Unit <mux> generated.
+
+Analyzing Entity <flipflop> in library <work> (Architecture <behavioral>).
+Entity <flipflop> analyzed. Unit <flipflop> generated.
+
+Analyzing generic Entity <alu> in library <work> (Architecture <behavioral>).
+	m = 6
+	n = 4
+Entity <alu> analyzed. Unit <alu> generated.
+
+Analyzing generic Entity <rams> in library <work> (Architecture <circuito>).
+	M = 6
+	N = 4
+Entity <rams> analyzed. Unit <rams> generated.
+
+Analyzing generic Entity <reg_contador> in library <work> (Architecture <behavioral>).
+	N = 6
+Entity <reg_contador> analyzed. Unit <reg_contador> generated.
+
+Analyzing generic Entity <registro.1> in library <work> (Architecture <behavioral>).
+	N = 6
+Entity <registro.1> analyzed. Unit <registro.1> generated.
+
+Analyzing generic Entity <registro.2> in library <work> (Architecture <behavioral>).
+	N = 4
+Entity <registro.2> analyzed. Unit <registro.2> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <conv_7seg>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd".
+    Found 16x7-bit ROM for signal <display>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <conv_7seg> synthesized.
+
+
+Synthesizing Unit <mux>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd".
+Unit <mux> synthesized.
+
+
+Synthesizing Unit <flipflop>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd".
+    Found 1-bit register for signal <data>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <flipflop> synthesized.
+
+
+Synthesizing Unit <alu>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd".
+    Found 6-bit adder for signal <data_out>.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <alu> synthesized.
+
+
+Synthesizing Unit <rams>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd".
+    Found 64x4-bit single-port RAM <Mram_RAM> for signal <RAM>.
+    Found 4-bit register for signal <do>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   4 D-type flip-flop(s).
+Unit <rams> synthesized.
+
+
+Synthesizing Unit <reg_contador>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd".
+    Found 6-bit up counter for signal <data>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <reg_contador> synthesized.
+
+
+Synthesizing Unit <registro_1>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd".
+    Found 6-bit register for signal <data>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <registro_1> synthesized.
+
+
+Synthesizing Unit <registro_2>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd".
+    Found 4-bit register for signal <data>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <registro_2> synthesized.
+
+
+Synthesizing Unit <black_jack>.
+    Related source file is "C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd".
+INFO:Xst:1799 - State s9 is never reached in FSM <STATE>.
+    Found finite state machine <FSM_0> for signal <STATE>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | boton_reset               (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | s1                                             |
+    | Power Up State     | s1                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit comparator lessequal for signal <STATE$cmp_le0000> created at line 350.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Comparator(s).
+Unit <black_jack> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 64x4-bit single-port RAM                              : 1
+# ROMs                                                 : 1
+ 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 5
+ 1-bit register                                        : 2
+ 4-bit register                                        : 2
+ 6-bit register                                        : 1
+# Comparators                                          : 1
+ 6-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <STATE/FSM> on signal <STATE[1:9]> with one-hot encoding.
+--------------------
+ State | Encoding
+--------------------
+ s1    | 000000001
+ s2    | 000000010
+ s3    | 000000100
+ s4    | 000010000
+ s5    | 000001000
+ s6    | 000100000
+ s7    | 001000000
+ s77   | 010000000
+ s8    | 100000000
+ s9    | unreached
+--------------------
+WARNING:Xst:1293 - FF/Latch <data> has a constant value of 0 in block <u_flip2>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <rams>.
+INFO:Xst:3231 - The small RAM <Mram_RAM> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 4-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to internal node          |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <rams> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# RAMs                                                 : 1
+ 64x4-bit single-port distributed RAM                  : 1
+# ROMs                                                 : 1
+ 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+# Comparators                                          : 1
+ 6-bit comparator lessequal                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <u_flip2/data> has a constant value of 0 in block <black_jack>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <black_jack> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block black_jack, actual ratio is 0.
+FlipFlop u_contador/data_2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : black_jack.ngr
+Top Level Output File Name         : black_jack
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 24
+
+Cell Usage :
+# BELS                             : 51
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 6
+#      LUT2_L                      : 1
+#      LUT3                        : 12
+#      LUT3_D                      : 2
+#      LUT4                        : 22
+#      LUT4_D                      : 2
+#      LUT4_L                      : 2
+#      VCC                         : 1
+# FlipFlops/Latches                : 31
+#      FD                          : 4
+#      FDR                         : 7
+#      FDRE                        : 18
+#      FDRS                        : 1
+#      FDS                         : 1
+# RAMS                             : 8
+#      RAM32X1S                    : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 4
+#      OBUF                        : 19
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1000ft256-5 
+
+ Number of Slices:                       35  out of   7680     0%  
+ Number of Slice Flip Flops:             31  out of  15360     0%  
+ Number of 4 input LUTs:                 65  out of  15360     0%  
+    Number used as logic:                49
+    Number used as RAMs:                 16
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    173    13%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 39    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.200ns (Maximum Frequency: 192.315MHz)
+   Minimum input arrival time before clock: 4.089ns
+   Maximum output required time after clock: 7.999ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.200ns (frequency: 192.315MHz)
+  Total number of paths / destination ports: 288 / 97
+-------------------------------------------------------------------------
+Delay:               5.200ns (Levels of Logic = 2)
+  Source:            STATE_FSM_FFd8 (FF)
+  Destination:       u_contador/data_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: STATE_FSM_FFd8 to u_contador/data_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.626   1.078  STATE_FSM_FFd8 (STATE_FSM_FFd8)
+     LUT3:I0->O            1   0.479   0.740  u_contador/data_or000023_SW0 (N17)
+     LUT4:I2->O            7   0.479   0.906  u_contador/data_or000023 (u_contador/data_or0000)
+     FDRE:R                    0.892          u_contador/data_0
+    ----------------------------------------
+    Total                      5.200ns (2.476ns logic, 2.724ns route)
+                                       (47.6% logic, 52.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 37 / 33
+-------------------------------------------------------------------------
+Offset:              4.089ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       u_registro_puntuacion/data_5 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to u_registro_puntuacion/data_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.715   0.771  reset_IBUF (reset_IBUF)
+     INV:I->O             19   0.479   1.233  boton_reset1_INV_0 (boton_reset)
+     FDRE:R                    0.892          u_registro_puntuacion/data_0
+    ----------------------------------------
+    Total                      4.089ns (2.086ns logic, 2.003ns route)
+                                       (51.0% logic, 49.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 39 / 18
+-------------------------------------------------------------------------
+Offset:              7.999ns (Levels of Logic = 2)
+  Source:            u_registro_carta/data_3 (FF)
+  Destination:       display<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: u_registro_carta/data_3 to display<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            14   0.626   1.304  u_registro_carta/data_3 (u_registro_carta/data_3)
+     LUT4:I0->O            1   0.479   0.681  u_conv1/Mrom_display21 (display_2_OBUF)
+     OBUF:I->O                 4.909          display_2_OBUF (display<2>)
+    ----------------------------------------
+    Total                      7.999ns (6.014ns logic, 1.985ns route)
+                                       (75.2% logic, 24.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.12 secs
+ 
+--> 
+
+Total memory usage is 259932 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

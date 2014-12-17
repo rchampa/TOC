@@ -1,0 +1,28 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Wed Dec 17 16:44:14 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "display<6>" LOCATE = SITE "G16" LEVEL 1;
+COMP "clk" LOCATE = SITE "T9" LEVEL 1;
+COMP "jugar" LOCATE = SITE "H4" LEVEL 1;
+COMP "carta_incorrecta" LOCATE = SITE "L5" LEVEL 1;
+COMP "puntuacion<0>" LOCATE = SITE "J14" LEVEL 1;
+COMP "puntuacion<1>" LOCATE = SITE "J16" LEVEL 1;
+COMP "puntuacion<2>" LOCATE = SITE "H15" LEVEL 1;
+COMP "puntuacion<3>" LOCATE = SITE "J13" LEVEL 1;
+COMP "puntuacion<4>" LOCATE = SITE "L15" LEVEL 1;
+COMP "puntuacion<5>" LOCATE = SITE "T13" LEVEL 1;
+COMP "reset" LOCATE = SITE "P12" LEVEL 1;
+COMP "display<0>" LOCATE = SITE "H14" LEVEL 1;
+COMP "display<1>" LOCATE = SITE "M4" LEVEL 1;
+COMP "plantarse" LOCATE = SITE "M3" LEVEL 1;
+COMP "display<2>" LOCATE = SITE "P1" LEVEL 1;
+COMP "comenzar" LOCATE = SITE "J1" LEVEL 1;
+COMP "led_derrota" LOCATE = SITE "N2" LEVEL 1;
+COMP "display<3>" LOCATE = SITE "N3" LEVEL 1;
+COMP "display<4>" LOCATE = SITE "M15" LEVEL 1;
+COMP "display<5>" LOCATE = SITE "H13" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

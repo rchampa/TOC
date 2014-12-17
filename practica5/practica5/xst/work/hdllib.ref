@@ -1,0 +1,16 @@
+AR reg_contador behavioral C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd sub00/vhpl11 1418831054
+AR mux behavioral C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd sub00/vhpl03 1418831046
+AR registro behavioral C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd sub00/vhpl13 1418831056
+AR black_jack behavioral C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd sub00/vhpl15 1418831058
+EN reg_contador NULL C:/hlocal/TOC/practica5/practica5/recursos/reg_contador.vhd sub00/vhpl10 1418831053
+AR conv_7seg behavioral C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd sub00/vhpl01 1418831044
+EN black_jack NULL C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd sub00/vhpl14 1418831057
+AR rams circuito C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd sub00/vhpl09 1418831052
+EN flipflop NULL C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd sub00/vhpl04 1418831047
+EN mux NULL C:/hlocal/TOC/practica5/practica5/recursos/mux.vhd sub00/vhpl02 1418831045
+EN conv_7seg NULL C:/hlocal/TOC/practica5/practica5/recursos/conv_7seg.vhd sub00/vhpl00 1418831043
+AR alu behavioral C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd sub00/vhpl07 1418831050
+EN rams NULL C:/hlocal/TOC/practica5/practica5/recursos/rams.vhd sub00/vhpl08 1418831051
+AR flipflop behavioral C:/hlocal/TOC/practica5/practica5/recursos/flipflop.vhd sub00/vhpl05 1418831048
+EN alu NULL C:/hlocal/TOC/practica5/practica5/recursos/alu.vhd sub00/vhpl06 1418831049
+EN registro NULL C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd sub00/vhpl12 1418831055

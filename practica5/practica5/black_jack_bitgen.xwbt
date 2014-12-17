@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\hlocal\TOC\practica5\practica5\black_jack.ncd
+OUTFILE=C:\hlocal\TOC\practica5\practica5\black_jack.bit
+FAMILY=Spartan3
+PART=xc3s1000-5ft256
+WORKINGDIR=C:\hlocal\TOC\practica5\practica5
+LICENSE=WebPack
+USER_INFO=210699396_1777489394_210552810_807
