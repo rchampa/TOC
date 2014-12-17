@@ -45,10 +45,10 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-comenzar    |    2.235(R)|   -0.731(R)|clk_BUFGP         |   0.000|
-jugar       |    2.876(R)|   -1.012(R)|clk_BUFGP         |   0.000|
-plantarse   |    2.934(R)|   -0.805(R)|clk_BUFGP         |   0.000|
-reset       |    4.259(R)|   -0.789(R)|clk_BUFGP         |   0.000|
+comenzar    |    2.467(R)|   -0.901(R)|clk_BUFGP         |   0.000|
+jugar       |    4.143(R)|   -1.072(R)|clk_BUFGP         |   0.000|
+plantarse   |    3.355(R)|   -0.491(R)|clk_BUFGP         |   0.000|
+reset       |    3.704(R)|   -0.079(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -56,24 +56,24 @@ Clock clk to Pad
              | clk (edge) |                  | Clock  |
 Destination  |   to PAD   |Internal Clock(s) | Phase  |
 -------------+------------+------------------+--------+
-carta<0>     |    8.353(R)|clk_BUFGP         |   0.000|
-carta<1>     |    8.390(R)|clk_BUFGP         |   0.000|
-carta<2>     |    9.011(R)|clk_BUFGP         |   0.000|
-carta<3>     |    9.494(R)|clk_BUFGP         |   0.000|
-display<0>   |   12.769(R)|clk_BUFGP         |   0.000|
-display<1>   |   11.445(R)|clk_BUFGP         |   0.000|
-display<2>   |   11.667(R)|clk_BUFGP         |   0.000|
-display<3>   |   11.738(R)|clk_BUFGP         |   0.000|
-display<4>   |   10.914(R)|clk_BUFGP         |   0.000|
-display<5>   |   12.115(R)|clk_BUFGP         |   0.000|
-display<6>   |   13.063(R)|clk_BUFGP         |   0.000|
-led_derrota  |    9.579(R)|clk_BUFGP         |   0.000|
-puntuacion<0>|   10.088(R)|clk_BUFGP         |   0.000|
-puntuacion<1>|   10.090(R)|clk_BUFGP         |   0.000|
-puntuacion<2>|   10.127(R)|clk_BUFGP         |   0.000|
-puntuacion<3>|   10.644(R)|clk_BUFGP         |   0.000|
-puntuacion<4>|    9.264(R)|clk_BUFGP         |   0.000|
-puntuacion<5>|    9.900(R)|clk_BUFGP         |   0.000|
+carta<0>     |    8.089(R)|clk_BUFGP         |   0.000|
+carta<1>     |    8.142(R)|clk_BUFGP         |   0.000|
+carta<2>     |    8.297(R)|clk_BUFGP         |   0.000|
+carta<3>     |    7.961(R)|clk_BUFGP         |   0.000|
+display<0>   |   14.012(R)|clk_BUFGP         |   0.000|
+display<1>   |   11.170(R)|clk_BUFGP         |   0.000|
+display<2>   |   12.946(R)|clk_BUFGP         |   0.000|
+display<3>   |   11.531(R)|clk_BUFGP         |   0.000|
+display<4>   |   12.469(R)|clk_BUFGP         |   0.000|
+display<5>   |   12.772(R)|clk_BUFGP         |   0.000|
+display<6>   |   13.971(R)|clk_BUFGP         |   0.000|
+led_derrota  |    9.355(R)|clk_BUFGP         |   0.000|
+puntuacion<0>|   10.678(R)|clk_BUFGP         |   0.000|
+puntuacion<1>|   10.550(R)|clk_BUFGP         |   0.000|
+puntuacion<2>|   10.243(R)|clk_BUFGP         |   0.000|
+puntuacion<3>|    9.982(R)|clk_BUFGP         |   0.000|
+puntuacion<4>|    9.055(R)|clk_BUFGP         |   0.000|
+puntuacion<5>|   10.162(R)|clk_BUFGP         |   0.000|
 -------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -81,11 +81,11 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.140|         |         |         |
+clk            |    3.912|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Dec 17 16:44:23 2014 
+Analysis completed Wed Dec 17 17:49:40 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:

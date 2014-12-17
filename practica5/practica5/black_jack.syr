@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: black_jack.prj
 
@@ -119,7 +119,8 @@ Architecture behavioral of Entity reg_contador is up to date.
 Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/registro.vhd" in Library work.
 Architecture behavioral of Entity registro is up to date.
 Compiling vhdl file "C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd" in Library work.
-Architecture behavioral of Entity black_jack is up to date.
+Entity <black_jack> compiled.
+Entity <black_jack> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -155,8 +156,6 @@ Analyzing hierarchy for entity <registro> in library <work> (architecture <behav
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <black_jack> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/hlocal/TOC/practica5/practica5/recursos/black_jack.vhd" line 237: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <registro_puntuacion_data_out>
 Entity <black_jack> analyzed. Unit <black_jack> generated.
 
 Analyzing Entity <conv_7seg> in library <work> (Architecture <behavioral>).
@@ -266,8 +265,8 @@ Synthesizing Unit <black_jack>.
 INFO:Xst:1799 - State s9 is never reached in FSM <STATE>.
     Found finite state machine <FSM_0> for signal <STATE>.
     -----------------------------------------------------------------------
-    | States             | 9                                              |
-    | Transitions        | 14                                             |
+    | States             | 11                                             |
+    | Transitions        | 16                                             |
     | Inputs             | 4                                              |
     | Outputs            | 7                                              |
     | Clock              | clk                       (rising_edge)        |
@@ -278,7 +277,7 @@ INFO:Xst:1799 - State s9 is never reached in FSM <STATE>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 6-bit comparator lessequal for signal <STATE$cmp_le0000> created at line 350.
+    Found 6-bit comparator lessequal for signal <STATE$cmp_le0000> created at line 403.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   1 Comparator(s).
@@ -311,21 +310,23 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <STATE/FSM> on signal <STATE[1:9]> with one-hot encoding.
---------------------
+Optimizing FSM <STATE/FSM> on signal <STATE[1:11]> with one-hot encoding.
+----------------------
  State | Encoding
---------------------
- s1    | 000000001
- s2    | 000000010
- s3    | 000000100
- s4    | 000010000
- s5    | 000001000
- s6    | 000100000
- s7    | 001000000
- s77   | 010000000
- s8    | 100000000
+----------------------
+ s1    | 00000000001
+ s2    | 00000000010
+ s3    | 00000000100
+ s4    | 00000010000
+ s5    | 00000001000
+ s6    | 00000100000
+ s7    | 00001000000
+ s77   | 00010000000
+ s777  | 00100000000
+ dummy | 01000000000
+ s8    | 10000000000
  s9    | unreached
---------------------
+----------------------
 WARNING:Xst:1293 - FF/Latch <data> has a constant value of 0 in block <u_flip2>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <rams>.
@@ -381,8 +382,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 31
- Flip-Flops                                            : 31
+# Registers                                            : 33
+ Flip-Flops                                            : 33
 
 =========================================================================
 
@@ -411,20 +412,21 @@ Design Statistics
 # IOs                              : 24
 
 Cell Usage :
-# BELS                             : 51
+# BELS                             : 54
 #      GND                         : 1
 #      INV                         : 2
-#      LUT2                        : 6
+#      LUT2                        : 8
 #      LUT2_L                      : 1
-#      LUT3                        : 12
-#      LUT3_D                      : 2
-#      LUT4                        : 22
+#      LUT3                        : 13
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 21
 #      LUT4_D                      : 2
-#      LUT4_L                      : 2
+#      LUT4_L                      : 3
 #      VCC                         : 1
-# FlipFlops/Latches                : 31
+# FlipFlops/Latches                : 33
 #      FD                          : 4
-#      FDR                         : 7
+#      FDR                         : 9
 #      FDRE                        : 18
 #      FDRS                        : 1
 #      FDS                         : 1
@@ -442,10 +444,10 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                       35  out of   7680     0%  
- Number of Slice Flip Flops:             31  out of  15360     0%  
- Number of 4 input LUTs:                 65  out of  15360     0%  
-    Number used as logic:                49
+ Number of Slices:                       37  out of   7680     0%  
+ Number of Slice Flip Flops:             33  out of  15360     0%  
+ Number of 4 input LUTs:                 68  out of  15360     0%  
+    Number used as logic:                52
     Number used as RAMs:                 16
  Number of IOs:                          24
  Number of bonded IOBs:                  24  out of    173    13%  
@@ -472,7 +474,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 39    |
+clk                                | BUFGP                  | 41    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -484,7 +486,7 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 5.200ns (Maximum Frequency: 192.315MHz)
-   Minimum input arrival time before clock: 4.089ns
+   Minimum input arrival time before clock: 4.145ns
    Maximum output required time after clock: 7.999ns
    Maximum combinational path delay: No path found
 
@@ -495,20 +497,20 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 5.200ns (frequency: 192.315MHz)
-  Total number of paths / destination ports: 288 / 97
+  Total number of paths / destination ports: 306 / 107
 -------------------------------------------------------------------------
 Delay:               5.200ns (Levels of Logic = 2)
-  Source:            STATE_FSM_FFd8 (FF)
+  Source:            STATE_FSM_FFd9 (FF)
   Destination:       u_contador/data_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: STATE_FSM_FFd8 to u_contador/data_0
+  Data Path: STATE_FSM_FFd9 to u_contador/data_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.626   1.078  STATE_FSM_FFd8 (STATE_FSM_FFd8)
-     LUT3:I0->O            1   0.479   0.740  u_contador/data_or000023_SW0 (N17)
+     FDRS:C->Q             5   0.626   1.078  STATE_FSM_FFd9 (STATE_FSM_FFd9)
+     LUT3:I0->O            1   0.479   0.740  u_contador/data_or000023_SW0 (N13)
      LUT4:I2->O            7   0.479   0.906  u_contador/data_or000023 (u_contador/data_or0000)
      FDRE:R                    0.892          u_contador/data_0
     ----------------------------------------
@@ -517,9 +519,9 @@ Delay:               5.200ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 37 / 33
+  Total number of paths / destination ports: 39 / 35
 -------------------------------------------------------------------------
-Offset:              4.089ns (Levels of Logic = 2)
+Offset:              4.145ns (Levels of Logic = 2)
   Source:            reset (PAD)
   Destination:       u_registro_puntuacion/data_5 (FF)
   Destination Clock: clk rising
@@ -529,11 +531,11 @@ Offset:              4.089ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             3   0.715   0.771  reset_IBUF (reset_IBUF)
-     INV:I->O             19   0.479   1.233  boton_reset1_INV_0 (boton_reset)
+     INV:I->O             21   0.479   1.288  boton_reset1_INV_0 (boton_reset)
      FDRE:R                    0.892          u_registro_puntuacion/data_0
     ----------------------------------------
-    Total                      4.089ns (2.086ns logic, 2.003ns route)
-                                       (51.0% logic, 49.0% route)
+    Total                      4.145ns (2.086ns logic, 2.059ns route)
+                                       (50.3% logic, 49.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -559,13 +561,13 @@ Offset:              7.999ns (Levels of Logic = 2)
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.12 secs
+Total CPU time to Xst completion: 4.27 secs
  
 --> 
 
-Total memory usage is 259932 kilobytes
+Total memory usage is 260124 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

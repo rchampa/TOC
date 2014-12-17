@@ -22,10 +22,6 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 40 ns(1), Instance /test_black_jack/uut/u_rams/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 at 40 ns(1), Instance /test_black_jack/uut/u_rams/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-# run 1.00us
-# run 1.00us
-# run 1.00us
-# run 1.00us
 ISim P.15xf (signature 0xc3576ebc)
 ----------------------------------------------------------------------
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to 'C:\software\electronica\xilinx\14.1\ISE_DS\common\licenses\xilinx.lic'.
@@ -45,6 +41,38 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 40 ns(1), Instance /test_black_jack/uut/u_rams/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 at 40 ns(1), Instance /test_black_jack/uut/u_rams/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
 # run 1.00us
 # run 1.00us
 # run 1.00us

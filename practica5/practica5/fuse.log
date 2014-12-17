@@ -30,7 +30,8 @@ Compiling architecture behavioral of entity registro [\registro(4)\]
 Compiling architecture behavioral of entity black_jack [black_jack_default]
 Compiling architecture behavioral of entity test_black_jack
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 24 VHDL Units
 Built simulation executable C:/hlocal/TOC/practica5/practica5/test_black_jack_isim_beh.exe
-Fuse Memory Usage: 37820 KB
-Fuse CPU Usage: 467 ms
+Fuse Memory Usage: 38096 KB
+Fuse CPU Usage: 530 ms

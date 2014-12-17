@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Wed Dec 17 16:44:17 2014">
+  <application stringID="par" timeStamp="Wed Dec 17 17:49:35 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -70,7 +70,7 @@
         <item AVAILABLE="173" dataType="int" label="Number of External IOBs" stringID="PAR_EXTERNAL_IOB" value="24">
           <item AVAILABLE="24" dataType="int" label="Number of LOCed IOBs" stringID="PAR_LOC_IOB" value="20"/>
         </item>
-        <item AVAILABLE="7680" dataType="int" stringID="PAR_SLICES" value="37"></item>
+        <item AVAILABLE="7680" dataType="int" stringID="PAR_SLICES" value="40"></item>
       </section>
     </task>
     <task stringID="PAR_PAR">
@@ -100,8 +100,8 @@
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX0"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
             <item dataType="float" label="Fanout" stringID="FANOUT" value="30.000000"/>
-            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.101000"/>
-            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.911000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.183000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="0.913000"/>
           </row>
         </table>
       </section>

@@ -516,7 +516,7 @@ LAB44:    xsi_set_current_line(124, ng0);
     t2 = (t0 + 2608U);
     t3 = *((char **)t2);
     t7 = *((int64 *)t3);
-    t8 = (2 * t7);
+    t8 = (8 * t7);
     t2 = (t0 + 3648);
     xsi_process_wait(t2, t8);
 

@@ -104,7 +104,7 @@ architecture Behavioral of black_jack is
 	);
 	end component;
 
-	type STATES is (S1, S2, S3, S4, S5, S6, S7, S77, S8, S9); -- similar al enum de java
+	type STATES is (S1, S2, S3, S4, S5, S6, S7, S77,S777, DUMMY,S8, S9); -- similar al enum de java
 	signal STATE, NEXT_STATE: STATES;
 	
 	
@@ -234,7 +234,7 @@ begin
 	conv_x <= registro_carta_data_out;
 	display <= conv_display;
 	
-	COMB_MAIN: process(STATE,boton_comenzar,cable_jugada)
+	COMB_MAIN: process(STATE,boton_comenzar,cable_jugada,registro_puntuacion_data_out)
 	begin
 		case STATE is
 			when S1 =>
@@ -335,7 +335,7 @@ begin
 				NEXT_STATE <= S7;
 			
 			when S7 =>
-				rams_we <= '0';
+				rams_we <= '1';
 				
 				flip_derrota_reset <= '0';
 				flip_derrota_load <= '0';
@@ -347,19 +347,17 @@ begin
 				registro_carta_load <= '1'; -- cargo la carta para el sgte estado
 				registro_puntuacion_load <= '0';
 				
-				if unsigned(registro_puntuacion_data_out) <= unsigned(veinte_y_uno) then
-					--rams_we <= '1';
-					NEXT_STATE <= S77; -- sigue jugando
-				elsif unsigned(registro_puntuacion_data_out) > unsigned(veinte_y_uno) then
-					NEXT_STATE <= S8; -- derrota
-					
-				elsif unsigned(registro_puntuacion_data_out) = 0 then
-					NEXT_STATE <= S9; -- carta error
-					--rams_we <= '0';
-				else
-					NEXT_STATE <= S7; -- nada
-					--rams_we <= '0';
-				end if;
+				NEXT_STATE <= S77;
+				
+--				if unsigned(registro_puntuacion_data_out) <= unsigned(veinte_y_uno) then
+--					NEXT_STATE <= S77; -- sigue jugando
+--				elsif unsigned(registro_puntuacion_data_out) > unsigned(veinte_y_uno) then
+--					NEXT_STATE <= S8; -- derrota
+--				elsif unsigned(registro_puntuacion_data_out) = 0 then
+--					NEXT_STATE <= S9; -- carta error
+--				else
+--					NEXT_STATE <= S7; -- nada
+--				end if;
 				
 			when S77 =>
 				rams_we <= '0';
@@ -373,7 +371,45 @@ begin
 				mux_z <= '1';
 				
 				contador_enable <= '0';
-				NEXT_STATE <= S3;
+				-- NEXT_STATE <= S3;
+				NEXT_STATE <= S777;
+				
+			when S777 =>
+				rams_we <= '0';
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_load <= '0';
+				flip_carta_reset <= '0';
+				
+				registro_carta_load <= '0'; 
+				registro_puntuacion_load <= '0';
+				mux_z <= '0';
+				
+				contador_enable <= '0';
+				NEXT_STATE <= DUMMY; -- nada
+				
+			when DUMMY =>
+				rams_we <= '0';
+				flip_derrota_reset <= '0';
+				flip_derrota_load <= '0';
+				flip_carta_load <= '0';
+				flip_carta_reset <= '0';
+				
+				registro_carta_load <= '0'; 
+				registro_puntuacion_load <= '0';
+				mux_z <= '0';
+				
+				contador_enable <= '0';
+				if unsigned(registro_puntuacion_data_out) <= unsigned(veinte_y_uno) then
+					NEXT_STATE <= S3; -- sigue jugando
+				elsif unsigned(registro_puntuacion_data_out) > unsigned(veinte_y_uno) then
+					NEXT_STATE <= S8; -- derrota
+				elsif unsigned(registro_puntuacion_data_out) = 0 then
+					NEXT_STATE <= S9; -- carta error
+				else
+					NEXT_STATE <= DUMMY; -- nada
+				end if;
+				
 				
 			when S8 =>
 				rams_we <= '0';
@@ -388,7 +424,7 @@ begin
 				NEXT_STATE <= S1;
 				
 			when S9 =>
-				rams_we <= '1';
+				rams_we <= '0';
 			
 				flip_derrota_reset <= '0';
 				flip_derrota_load <= '0';

@@ -123,7 +123,7 @@ begin
 		wait for 3*clk_period;
 		aux_jugar<='1';
 		aux_plantarse<='1';
-		wait for 2*clk_period;
+		wait for 8*clk_period;
 		aux_jugar<='0';
 		aux_plantarse<='1';
 		wait for 3*clk_period;
