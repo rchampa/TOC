@@ -1,0 +1,2 @@
+vhdl isim_temp "recursos/contador.vhd"
+vhdl isim_temp "recursos/test_contador.vhd"

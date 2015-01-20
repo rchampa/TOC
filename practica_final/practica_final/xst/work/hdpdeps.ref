@@ -1,0 +1,9 @@
+V3 3
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd 2015/01/19.20:44:45 P.20131013
+EN work/rams 1421697512 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/rams/circuito 1421697513 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd \
+      EN work/rams 1421697512

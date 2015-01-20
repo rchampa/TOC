@@ -1,0 +1,2 @@
+vhdl work "recursos/contador.vhd"
+vhdl work "recursos/test_contador.vhd"
