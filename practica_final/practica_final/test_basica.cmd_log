@@ -2,3 +2,7 @@ xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/pr
 xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 
 xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 
 xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/test_basica.syr" 

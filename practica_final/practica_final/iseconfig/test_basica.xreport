@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-01-21T16:05:40</DateModified>
+  <DateModified>2015-01-21T17:27:22</DateModified>
   <ModuleName>test_basica</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/iseconfig/test_basica.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final\</ImplementationReportsDirectory>
   <DateInitialized>2015-01-21T16:05:40</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

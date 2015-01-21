@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/asm.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/asm.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
