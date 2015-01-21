@@ -16,11 +16,12 @@ end rams;
 architecture circuito  of rams is
    type ram_type is array (0 to 63) of std_logic_vector (3 downto 0);
    signal RAM : ram_type:= (
-	X"1", X"2", X"3", X"4", X"5", X"6",X"7", X"8", X"9", X"A", X"A", X"A", X"A",
-	X"1", X"2", X"3", X"4", X"5", X"6",X"7", X"8", X"9", X"A", X"A", X"A", X"A",
-	X"1", X"2", X"3", X"4", X"5", X"6",X"7", X"8", X"9", X"A", X"A", X"A", X"A",
-	X"1", X"2", X"3", X"4", X"5", X"6",X"7", X"8", X"9", X"A", X"A", X"A", X"A",
-	X"0",X"0",X"0",X"0",X"0",X"0",X"0",X"0",X"0",X"0",X"0",X"0");
+	X"1", X"2", X"4", X"4", X"5", X"6", X"7", X"8", X"9", X"A",
+	X"A", X"A", X"A",	X"1", X"2", X"4", X"4", X"5", X"6", X"7", 
+	X"8", X"A", X"A", X"A", X"A", X"A",	X"1", X"2", X"4", X"4",
+	X"5", X"C", X"7", X"8", X"9", X"A", X"A", X"A", X"A", X"1",
+	X"2", X"4", X"4", X"5", X"6", X"7", X"8", X"9", X"A", X"A",
+	X"A", X"A", X"0", X"0", X"0", X"0", X"0", X"0", X"0", X"0",X"0",X"0",X"0",X"0");
 	
 begin
 

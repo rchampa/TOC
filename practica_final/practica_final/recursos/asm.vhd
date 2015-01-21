@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -31,12 +31,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity asm is
 	port (
-		clk,reset_n,ini,escribir: in std_logic;
+		clk,rst_n,ini,escribir: in std_logic;
 		clave: in std_logic_vector (3 downto 0);
 		nueva_clave: in std_logic_vector (3 downto 0);
 		fin: out std_logic;
-		dout: out std_logic_vector (4 downto 0);
-		error_o: in std_logic
+		dir: out std_logic_vector (4 downto 0);
+		error_o: out std_logic
 	);
 end asm;
 
@@ -75,7 +75,7 @@ architecture Behavioral of asm is
 	signal STATE, NEXT_STATE: STATES;
 	
 	-- uso 6 bits a posta porque en sino no podría hacer la pregunta i<32
-	SIGNAL i: std_logic_vector(5 downto 0); 
+	signal i: std_logic_vector(5 downto 0); 
 	
 	signal ff_fin_clk : std_logic;
 	signal ff_fin_reset : std_logic;
@@ -98,25 +98,38 @@ architecture Behavioral of asm is
 	signal rams_di: std_logic_vector(3 downto 0);
 	signal rams_do: std_logic_vector(3 downto 0);
 	
+	signal treinta_y_uno: std_logic_vector(5 downto 0);
+	
+	signal cable_fin : std_logic;
+	signal cable_error : std_logic;
+	
 begin
 
+	treinta_y_uno <= "100000";
+	fin <= ff_fin_dout;
+	dir <= reg_dir_dout;
+	error_o <= ff_error_dout;
+	
+	cable_fin <= ff_fin_reset or rst_n;
+	cable_error <= ff_error_reset or rst_n;
+
 	u_flip1: flipflop
-	port map (clk,ff_fin_reset,ff_fin_load,ff_fin_dout);
+	port map (clk,cable_fin,ff_fin_load,ff_fin_dout);
 	
 	u_flip2: flipflop
-	port map (clk,ff_error_reset,ff_error_load,ff_error_dout);
+	port map (clk,cable_error,ff_error_load,ff_error_dout);
 	
 	u_reg : registro
-	port map (clk,reg_dir_reset,reg_dir_load,reg_dir_din,reg_dir_dout);
+	port map (clk,rst_n,reg_dir_load,reg_dir_din,reg_dir_dout);
 	
 	u_rams: rams generic map (5,4) -- m=5bits, n=4bits
 	port map (clk,rams_we,rams_addr,rams_di,rams_do);
 	
 	
-	SYNC: process(reset_n,clk)
+	SYNC: process(rst_n,clk)
 	begin
 		if clk'event and clk='1' then 
-			if reset_n ='1' then
+			if rst_n ='1' then
 				STATE <= S1;
 			else
 				STATE <= NEXT_STATE;
@@ -127,6 +140,10 @@ begin
 	
 	COMB_MAIN: process(STATE,ini)
 	begin
+		ff_error_load <= '0';
+		rams_we <= '0';
+		reg_dir_load <= '0';
+		
 		case STATE is
 			when S1 =>
 				ff_fin_load <= '1';
@@ -138,10 +155,11 @@ begin
 				NEXT_STATE <= S3;
 			
 			when S3 =>
-				if unsigned(i) < unsigned("100000") then
+				if unsigned(i) < unsigned(treinta_y_uno) then
 					NEXT_STATE <= S4;
 				else
 					NEXT_STATE <= S1;
+				end if;
 			
 			when S4 =>
 				rams_addr <= i(4 downto 0); -- se prepara mem(i)
@@ -152,38 +170,28 @@ begin
 					NEXT_STATE <= S6;
 				else
 					NEXT_STATE <= S8;
+				end if;
 			
 			when S6 =>
 				ff_error_reset <= '1';
 				reg_dir_load <= '1';
 				reg_dir_din <= i(4 downto 0);
 				
-				if escribir = 1 then
-					NEXT_STATE <= S7
+				if escribir = '1' then
+					NEXT_STATE <= S7;
 				else 
-					NEXT_STATE <= S8
+					NEXT_STATE <= S8;
+				end if;
 			
 			when S7 =>
-				we <= '1';
+				rams_we <= '1';
 				rams_di <= nueva_clave;
-				NEXT_STATE <= S8
+				NEXT_STATE <= S8;
 				
 			when S8 =>
-				i <= i+1;
-				NEXT_STATE <= S3
+				i <= std_logic_vector(unsigned(i) + 1);
+				NEXT_STATE <= S3;
 			when OTHERS =>
-				conv_x_estado <= "1111";--F
-				puntuacion_menos <= '0';
-				puntuacion_mas <= '0';
-				rams_we <= '0';
-				flip_derrota_reset <= '0';
-				flip_derrota_load <= '0';
-				flip_carta_reset <= '0';
-				flip_carta_load <= '0';
-				registro_carta_load <= '0'; 
-				registro_puntuacion_load <= '0';
-				mux_z <= '0';
-				contador_enable <= '0';
 				NEXT_STATE <= S1;
 				
 		end case;

@@ -1,0 +1,5 @@
+vhdl isim_temp "recursos/registro.vhd"
+vhdl isim_temp "recursos/ram.vhd"
+vhdl isim_temp "recursos/flipflop.vhd"
+vhdl isim_temp "recursos/asm.vhd"
+vhdl isim_temp "recursos/test.vhd"
