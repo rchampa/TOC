@@ -1,34 +1,52 @@
-V3 19
-FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd 2015/01/21.02:27:11 P.20131013
-EN work/asm 1421858299 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd \
+V3 30
+FL C:/hlocal/TOC/practica_final/practica_final/recursos/asm.vhd 2015/01/21.19:49:47 P.15xf
+EN work/asm 1421866236 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/asm.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/asm/Behavioral 1421858300 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd \
-      EN work/asm 1421858299 CP flipflop CP registro CP rams
-FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd 2015/01/20.19:16:12 P.20131013
-EN work/flipflop 1421858293 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd \
+AR work/asm/Behavioral 1421866237 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/asm.vhd EN work/asm 1421866236 \
+      CP comparador CP flipflop CP registro CP rams
+FL C:/hlocal/TOC/practica_final/practica_final/recursos/comparador.vhd 2015/01/21.18:39:01 P.15xf
+EN work/comparador 1421866228 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/comparador.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/comparador/Behavioral 1421866229 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/comparador.vhd \
+      EN work/comparador 1421866228
+FL C:/hlocal/TOC/practica_final/practica_final/recursos/flipflop.vhd 2015/01/21.18:01:19 P.15xf
+EN work/flipflop 1421866230 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/flipflop.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/flipflop/Behavioral 1421858294 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd \
-      EN work/flipflop 1421858293
-FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd 2015/01/21.00:33:33 P.20131013
-EN work/rams 1421858297 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd \
+AR work/flipflop/Behavioral 1421866231 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/flipflop.vhd \
+      EN work/flipflop 1421866230
+FL C:/hlocal/TOC/practica_final/practica_final/recursos/ram.vhd 2015/01/21.19:38:16 P.15xf
+EN work/rams 1421866234 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/ram.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/rams/circuito 1421858298 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd \
-      EN work/rams 1421858297
-FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd 2015/01/20.20:10:12 P.20131013
-EN work/registro 1421858295 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd \
+AR work/rams/circuito 1421866235 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/ram.vhd \
+      EN work/rams 1421866234
+FL C:/hlocal/TOC/practica_final/practica_final/recursos/registro.vhd 2015/01/21.18:01:19 P.15xf
+EN work/registro 1421866232 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/registro.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/registro/Behavioral 1421858296 \
-      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd \
-      EN work/registro 1421858295
-FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd 2015/01/20.23:25:53 P.20131013
+AR work/registro/Behavioral 1421866233 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/registro.vhd \
+      EN work/registro 1421866232
+FL C:/hlocal/TOC/practica_final/practica_final/recursos/test_ej1.vhd 2015/01/21.18:29:47 P.15xf
+EN work/test_ej1 0 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/test_ej1.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/test_ej1/behavior 0 \
+      FL C:/hlocal/TOC/practica_final/practica_final/recursos/test_ej1.vhd \
+      EN work/test_ej1 0 CP comparador
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd 2015/01/21.02:27:11 P.15xf
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd 2015/01/20.19:16:12 P.15xf
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd 2015/01/21.00:33:33 P.15xf
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd 2015/01/20.20:10:12 P.15xf
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd 2015/01/20.23:25:53 P.15xf
 EN work/test_basica 0 \
       FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd \
       PB ieee/std_logic_1164 1381692176

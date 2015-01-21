@@ -1,0 +1,12 @@
+Command line:
+   test_ej2_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=netgen/par/asm_timesim.sdf
+     -sdfroot  /uut
+     -simrunnum  0
+     -socket  2154
+
+Wed Jan 21 19:52:01 2015
+
+
+ Elaboration Time: 0.093601 sec

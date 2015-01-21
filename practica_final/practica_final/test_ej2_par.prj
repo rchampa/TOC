@@ -1,0 +1,2 @@
+vhdl work "netgen/par/asm_timesim.vhd"
+vhdl work "recursos/test_eje2.vhd"

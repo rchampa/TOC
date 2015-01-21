@@ -1,0 +1,30 @@
+Command line:
+   test_ej1_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=netgen/par/comparador_timesim.sdf
+     -sdfroot  /uut
+     -simrunnum  0
+     -socket  2084
+
+Wed Jan 21 19:44:29 2015
+
+
+ Elaboration Time: 0.0468 sec
+
+ Current Memory Usage: 826.687 Meg
+
+ Total Signals          : 207
+ Total Nets             : 124
+ Total Signal Drivers   : 95
+ Total Blocks           : 73
+ Total Primitive Blocks : 40
+ Total Processes        : 93
+ Total Traceable Variables  : 320
+ Total Scalar Nets and Variables : 5313
+
+ Total Simulation Time: 0.0624 sec
+
+ Current Memory Usage: 826.687 Meg
+
+Wed Jan 21 19:44:45 2015
+

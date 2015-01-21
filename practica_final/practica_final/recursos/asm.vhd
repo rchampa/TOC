@@ -69,13 +69,27 @@ architecture Behavioral of asm is
 		do: out std_logic_vector (N-1 downto 0)
 	);
 	end component;
+	
+	component comparador is
+	port(
+		x: in std_logic_vector (3 downto 0);
+		y: in std_logic_vector (3 downto 0);
+		c: in std_logic;
+		s: out std_logic
+	);
+	end component;
 
 
 	type STATES is (S1, S2, S3, S4, S5, S6, S7, S8, S9); -- similar al enum de java
 	signal STATE, NEXT_STATE: STATES;
 	
 	-- uso 6 bits a posta porque en sino no podría hacer la pregunta i<32
-	signal i: std_logic_vector(5 downto 0); 
+	--signal i: std_logic_vector(5 downto 0); 
+
+	signal comp_c : std_logic;
+	signal comp_s : std_logic;
+	signal comp_x : std_logic_vector(3 downto 0);
+	signal comp_y : std_logic_vector(3 downto 0);
 	
 	signal ff_fin_clk : std_logic;
 	signal ff_fin_reset : std_logic;
@@ -92,6 +106,12 @@ architecture Behavioral of asm is
 	signal reg_dir_load : std_logic;
 	signal reg_dir_din : std_logic_vector(4 downto 0);
 	signal reg_dir_dout : std_logic_vector(4 downto 0);
+	
+	signal i_clk : std_logic;
+	signal i_reset : std_logic;
+	signal i_load : std_logic;
+	signal i_din : std_logic_vector(5 downto 0);
+	signal i_dout : std_logic_vector(5 downto 0);
 	
 	signal rams_we : std_logic;
 	signal rams_addr: std_logic_vector(4 downto 0);
@@ -112,6 +132,9 @@ begin
 	
 	cable_fin <= ff_fin_reset or rst_n;
 	cable_error <= ff_error_reset or rst_n;
+	
+	u_comp: comparador
+	port map (comp_x,comp_y,comp_c,comp_s);
 
 	u_flip1: flipflop
 	port map (clk,cable_fin,ff_fin_load,ff_fin_dout);
@@ -122,9 +145,17 @@ begin
 	u_reg : registro
 	port map (clk,rst_n,reg_dir_load,reg_dir_din,reg_dir_dout);
 	
+	u_reg_i : registro generic map (6)
+	port map (clk,rst_n,i_load,i_din,i_dout);
+	
 	u_rams: rams generic map (5,4) -- m=5bits, n=4bits
 	port map (clk,rams_we,rams_addr,rams_di,rams_do);
 	
+	comp_x <= rams_do;
+	comp_y <= clave;
+	rams_di <= nueva_clave;
+	reg_dir_din <= i_dout(4 downto 0);
+	rams_addr <= i_dout(4 downto 0); -- se prepara mem(i)
 	
 	SYNC: process(rst_n,clk)
 	begin
@@ -143,26 +174,39 @@ begin
 		ff_error_load <= '0';
 		rams_we <= '0';
 		reg_dir_load <= '0';
+		comp_c <= '0';
+		
+		i_load <= '0';
+		i_din <= (OTHERS=>'0');
 		
 		case STATE is
 			when S1 =>
 				ff_fin_load <= '1';
-				NEXT_STATE <= S2;
+				
+				if ini = '1' then
+					NEXT_STATE <= S2;
+				else
+					NEXT_STATE <= S1;
+				end if;
 				
 			when S2 =>
-				i <= (OTHERS=>'0');
+				--i <= (OTHERS=>'0');
+				i_load <= '1';
+				i_din <= (OTHERS=>'0');
 				ff_error_load <= '1'; 				
 				NEXT_STATE <= S3;
 			
 			when S3 =>
-				if unsigned(i) < unsigned(treinta_y_uno) then
+				--if unsigned(i) < unsigned(treinta_y_uno) then
+				if unsigned(i_dout) < unsigned(treinta_y_uno) then
 					NEXT_STATE <= S4;
 				else
 					NEXT_STATE <= S1;
 				end if;
 			
 			when S4 =>
-				rams_addr <= i(4 downto 0); -- se prepara mem(i)
+				--rams_addr <= i(4 downto 0); -- se prepara mem(i)
+				--rams_addr <= i_dout(4 downto 0); -- se prepara mem(i)
 				NEXT_STATE <= S5;
 				
 			when S5 =>
@@ -175,9 +219,14 @@ begin
 			when S6 =>
 				ff_error_reset <= '1';
 				reg_dir_load <= '1';
-				reg_dir_din <= i(4 downto 0);
+				--reg_dir_din <= i(4 downto 0);
+				--reg_dir_din <= i_dout(4 downto 0);
 				
-				if escribir = '1' then
+				
+				--if rams_do = clave then  -- se está en mem(i) y se puede consultar su salida
+				--rams_do < clave
+				comp_c <= '1';
+				if escribir = '1' and comp_s = '1' then
 					NEXT_STATE <= S7;
 				else 
 					NEXT_STATE <= S8;
@@ -185,11 +234,13 @@ begin
 			
 			when S7 =>
 				rams_we <= '1';
-				rams_di <= nueva_clave;
+				--rams_di <= nueva_clave;
 				NEXT_STATE <= S8;
 				
 			when S8 =>
-				i <= std_logic_vector(unsigned(i) + 1);
+				--i <= std_logic_vector(unsigned(i) + 1);
+				i_load <= '1';
+				i_din <= std_logic_vector(unsigned(i_dout) + 1);
 				NEXT_STATE <= S3;
 			when OTHERS =>
 				NEXT_STATE <= S1;

@@ -1,0 +1,5 @@
+work	"recursos/asm.vhd"
+work	"recursos/comparador.vhd"
+work	"recursos/flipflop.vhd"
+work	"recursos/ram.vhd"
+work	"recursos/registro.vhd"

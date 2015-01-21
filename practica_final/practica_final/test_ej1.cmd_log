@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/test_ej1.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/test_ej1.syr" 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/test_ej1.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/test_ej1.syr" 

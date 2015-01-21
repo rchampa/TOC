@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-01-20T22:59:44</DateModified>
+  <DateModified>2015-01-21T18:54:23</DateModified>
   <ModuleName>asm</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/iseconfig/asm.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final</ImplementationReportsDirectory>
-  <DateInitialized>2015-01-20T22:59:44</DateInitialized>
+  <SummaryTimeStamp>2015-01-21T18:51:55</SummaryTimeStamp>
+  <SavedFilePath>C:/hlocal/TOC/practica_final/practica_final/iseconfig/asm.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/hlocal/TOC/practica_final/practica_final\</ImplementationReportsDirectory>
+  <DateInitialized>2015-01-21T18:54:23</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

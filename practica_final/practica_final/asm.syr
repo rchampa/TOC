@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: asm.prj
 
@@ -104,13 +104,15 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/practica_final/practica_final/recursos/comparador.vhd" in Library work.
+Architecture behavioral of Entity comparador is up to date.
+Compiling vhdl file "C:/hlocal/TOC/practica_final/practica_final/recursos/flipflop.vhd" in Library work.
 Architecture behavioral of Entity flipflop is up to date.
-Compiling vhdl file "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/practica_final/practica_final/recursos/registro.vhd" in Library work.
 Architecture behavioral of Entity registro is up to date.
-Compiling vhdl file "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/practica_final/practica_final/recursos/ram.vhd" in Library work.
 Architecture circuito of Entity rams is up to date.
-Compiling vhdl file "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/practica_final/practica_final/recursos/asm.vhd" in Library work.
 Architecture behavioral of Entity asm is up to date.
 
 =========================================================================
@@ -118,10 +120,15 @@ Architecture behavioral of Entity asm is up to date.
 =========================================================================
 Analyzing hierarchy for entity <asm> in library <work> (architecture <behavioral>).
 
+Analyzing hierarchy for entity <comparador> in library <work> (architecture <behavioral>).
+
 Analyzing hierarchy for entity <flipflop> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <registro> in library <work> (architecture <behavioral>) with generics.
 	N = 5
+
+Analyzing hierarchy for entity <registro> in library <work> (architecture <behavioral>) with generics.
+	N = 6
 
 Analyzing hierarchy for entity <rams> in library <work> (architecture <circuito>) with generics.
 	M = 5
@@ -132,26 +139,29 @@ Analyzing hierarchy for entity <rams> in library <work> (architecture <circuito>
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <asm> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd" line 141: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <rams_do>, <clave>, <escribir>, <nueva_clave>
+WARNING:Xst:819 - "C:/hlocal/TOC/practica_final/practica_final/recursos/asm.vhd" line 172: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <i_dout>, <rams_do>, <clave>, <escribir>, <comp_s>
 INFO:Xst:2679 - Register <ff_fin_load> in unit <asm> has a constant value of 1 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ff_error_reset> in unit <asm> has a constant value of 1 during circuit operation. The register is replaced by logic.
 Entity <asm> analyzed. Unit <asm> generated.
 
+Analyzing Entity <comparador> in library <work> (Architecture <behavioral>).
+Entity <comparador> analyzed. Unit <comparador> generated.
+
 Analyzing Entity <flipflop> in library <work> (Architecture <behavioral>).
 Entity <flipflop> analyzed. Unit <flipflop> generated.
 
-Analyzing generic Entity <registro> in library <work> (Architecture <behavioral>).
+Analyzing generic Entity <registro.1> in library <work> (Architecture <behavioral>).
 	N = 5
-Entity <registro> analyzed. Unit <registro> generated.
+Entity <registro.1> analyzed. Unit <registro.1> generated.
+
+Analyzing generic Entity <registro.2> in library <work> (Architecture <behavioral>).
+	N = 6
+Entity <registro.2> analyzed. Unit <registro.2> generated.
 
 Analyzing generic Entity <rams> in library <work> (Architecture <circuito>).
 	M = 5
 	N = 4
-WARNING:Xst:790 - "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd" line 32: Index value(s) does not match array range, simulation mismatch.
-INFO:Xst:1607 - Contents of array <RAM> may be accessed with an index that does not cover the full array size.
-WARNING:Xst:790 - "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd" line 34: Index value(s) does not match array range, simulation mismatch.
-INFO:Xst:1607 - Contents of array <RAM> may be accessed with an index that does not cover the full array size.
 Entity <rams> analyzed. Unit <rams> generated.
 
 
@@ -161,24 +171,44 @@ Entity <rams> analyzed. Unit <rams> generated.
 
 Performing bidirectional port resolution...
 
+Synthesizing Unit <comparador>.
+    Related source file is "C:/hlocal/TOC/practica_final/practica_final/recursos/comparador.vhd".
+    Found 4-bit comparator greater for signal <aux_z$cmp_gt0000> created at line 47.
+    Found 1-bit xor2 for signal <aux_z$xor0000> created at line 47.
+    Found 1-bit xor2 for signal <aux_z$xor0001> created at line 47.
+    Found 1-bit xor2 for signal <aux_z$xor0002> created at line 47.
+    Found 1-bit xor2 for signal <aux_z$xor0003> created at line 47.
+    Summary:
+	inferred   1 Comparator(s).
+Unit <comparador> synthesized.
+
+
 Synthesizing Unit <flipflop>.
-    Related source file is "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd".
+    Related source file is "C:/hlocal/TOC/practica_final/practica_final/recursos/flipflop.vhd".
     Found 1-bit register for signal <data>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <flipflop> synthesized.
 
 
-Synthesizing Unit <registro>.
-    Related source file is "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd".
+Synthesizing Unit <registro_1>.
+    Related source file is "C:/hlocal/TOC/practica_final/practica_final/recursos/registro.vhd".
     Found 5-bit register for signal <data>.
     Summary:
 	inferred   5 D-type flip-flop(s).
-Unit <registro> synthesized.
+Unit <registro_1> synthesized.
+
+
+Synthesizing Unit <registro_2>.
+    Related source file is "C:/hlocal/TOC/practica_final/practica_final/recursos/registro.vhd".
+    Found 6-bit register for signal <data>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <registro_2> synthesized.
 
 
 Synthesizing Unit <rams>.
-    Related source file is "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd".
+    Related source file is "C:/hlocal/TOC/practica_final/practica_final/recursos/ram.vhd".
     Found 32x4-bit single-port RAM <Mram_RAM> for signal <RAM>.
     Found 4-bit register for signal <do>.
     Summary:
@@ -188,10 +218,11 @@ Unit <rams> synthesized.
 
 
 Synthesizing Unit <asm>.
-    Related source file is "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd".
-WARNING:Xst:647 - Input <ini> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "C:/hlocal/TOC/practica_final/practica_final/recursos/asm.vhd".
 WARNING:Xst:1780 - Signal <reg_dir_reset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <reg_dir_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <i_reset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <i_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <ff_fin_reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 WARNING:Xst:1780 - Signal <ff_fin_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <ff_error_clk> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -199,8 +230,8 @@ INFO:Xst:1799 - State s9 is never reached in FSM <STATE>.
     Found finite state machine <FSM_0> for signal <STATE>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
-    | Transitions        | 11                                             |
-    | Inputs             | 3                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 5                                              |
     | Outputs            | 5                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | rst_n                     (positive)           |
@@ -210,14 +241,9 @@ INFO:Xst:1799 - State s9 is never reached in FSM <STATE>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-WARNING:Xst:737 - Found 4-bit latch for signal <rams_di>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 5-bit latch for signal <reg_dir_din>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 5-bit latch for signal <rams_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 6-bit latch for signal <i>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-    Found 6-bit adder for signal <i$addsub0000> created at line 192.
-    Found 4-bit comparator equal for signal <STATE$cmp_eq0000> created at line 169.
-    Found 6-bit comparator less for signal <STATE$cmp_lt0000> created at line 158.
+    Found 6-bit adder for signal <i_din$addsub0000> created at line 243.
+    Found 4-bit comparator equal for signal <STATE$cmp_eq0000> created at line 213.
+    Found 6-bit comparator less for signal <STATE$cmp_lt0000> created at line 201.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred   1 Adder/Subtractor(s).
@@ -233,17 +259,17 @@ Macro Statistics
  32x4-bit single-port RAM                              : 1
 # Adders/Subtractors                                   : 1
  6-bit adder                                           : 1
-# Registers                                            : 4
+# Registers                                            : 5
  1-bit register                                        : 2
  4-bit register                                        : 1
  5-bit register                                        : 1
-# Latches                                              : 4
- 4-bit latch                                           : 1
- 5-bit latch                                           : 2
- 6-bit latch                                           : 1
-# Comparators                                          : 2
+ 6-bit register                                        : 1
+# Comparators                                          : 3
  4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 1
  6-bit comparator less                                 : 1
+# Xors                                                 : 4
+ 1-bit xor2                                            : 4
 
 =========================================================================
 
@@ -252,18 +278,18 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <STATE/FSM> on signal <STATE[1:8]> with one-hot encoding.
+Optimizing FSM <STATE/FSM> on signal <STATE[1:3]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
- s1    | 00000001
- s2    | 00000010
- s3    | 00000100
- s4    | 00001000
- s5    | 00010000
- s6    | 00100000
- s7    | 10000000
- s8    | 01000000
+ s1    | 000
+ s2    | 001
+ s3    | 011
+ s4    | 010
+ s5    | 110
+ s6    | 111
+ s7    | 100
+ s8    | 101
  s9    | unreached
 -------------------
 
@@ -291,15 +317,14 @@ Macro Statistics
  32x4-bit single-port distributed RAM                  : 1
 # Adders/Subtractors                                   : 1
  6-bit adder                                           : 1
-# Registers                                            : 11
- Flip-Flops                                            : 11
-# Latches                                              : 4
- 4-bit latch                                           : 1
- 5-bit latch                                           : 2
- 6-bit latch                                           : 1
-# Comparators                                          : 2
+# Registers                                            : 17
+ Flip-Flops                                            : 17
+# Comparators                                          : 3
  4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 1
  6-bit comparator less                                 : 1
+# Xors                                                 : 4
+ 1-bit xor2                                            : 4
 
 =========================================================================
 
@@ -319,8 +344,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 19
- Flip-Flops                                            : 19
+# Registers                                            : 20
+ Flip-Flops                                            : 20
 
 =========================================================================
 
@@ -349,26 +374,24 @@ Design Statistics
 # IOs                              : 19
 
 Cell Usage :
-# BELS                             : 18
-#      LUT2                        : 6
-#      LUT2_L                      : 1
-#      LUT3                        : 3
-#      LUT4                        : 4
-#      LUT4_D                      : 3
+# BELS                             : 31
+#      LUT2                        : 3
+#      LUT3                        : 9
+#      LUT3_D                      : 1
+#      LUT4                        : 12
+#      LUT4_L                      : 5
 #      VCC                         : 1
-# FlipFlops/Latches                : 39
+# FlipFlops/Latches                : 20
 #      FD                          : 4
-#      FDR                         : 6
-#      FDRE                        : 7
-#      FDRS                        : 1
-#      FDS                         : 1
-#      LD                          : 20
+#      FDR                         : 1
+#      FDRE                        : 13
+#      FDRS                        : 2
 # RAMS                             : 4
 #      RAM32X1S                    : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 17
-#      IBUF                        : 10
+# IO Buffers                       : 18
+#      IBUF                        : 11
 #      OBUF                        : 7
 =========================================================================
 
@@ -377,14 +400,14 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                       26  out of   7680     0%  
- Number of Slice Flip Flops:             34  out of  15360     0%  
- Number of 4 input LUTs:                 25  out of  15360     0%  
-    Number used as logic:                17
+ Number of Slices:                       21  out of   7680     0%  
+ Number of Slice Flip Flops:             19  out of  15360     0%  
+ Number of 4 input LUTs:                 38  out of  15360     0%  
+    Number used as logic:                30
     Number used as RAMs:                  8
  Number of IOs:                          19
- Number of bonded IOBs:                  18  out of    173    10%  
-    IOB Flip Flops:                       5
+ Number of bonded IOBs:                  19  out of    173    10%  
+    IOB Flip Flops:                       1
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -405,19 +428,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------+------------------------+-------+
-Clock Signal                           | Clock buffer(FF name)  | Load  |
----------------------------------------+------------------------+-------+
-STATE_FSM_FFd6-In(STATE_FSM_FFd6-In1:O)| NONE(*)(i_0)           | 6     |
-STATE_FSM_FFd5                         | NONE(rams_addr_0)      | 5     |
-STATE_FSM_FFd3                         | NONE(reg_dir_din_0)    | 5     |
-STATE_FSM_FFd1                         | NONE(rams_di_0)        | 4     |
-clk                                    | BUFGP                  | 23    |
----------------------------------------+------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 24    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -427,8 +442,8 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 3.798ns (Maximum Frequency: 263.286MHz)
-   Minimum input arrival time before clock: 3.807ns
+   Minimum period: 5.668ns (Maximum Frequency: 176.429MHz)
+   Minimum input arrival time before clock: 5.996ns
    Maximum output required time after clock: 6.216ns
    Maximum combinational path delay: No path found
 
@@ -437,88 +452,52 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'STATE_FSM_FFd6-In'
-  Clock period: 3.463ns (frequency: 288.742MHz)
-  Total number of paths / destination ports: 21 / 6
--------------------------------------------------------------------------
-Delay:               3.463ns (Levels of Logic = 2)
-  Source:            i_3 (LATCH)
-  Destination:       i_5 (LATCH)
-  Source Clock:      STATE_FSM_FFd6-In falling
-  Destination Clock: STATE_FSM_FFd6-In falling
-
-  Data Path: i_3 to i_5
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               4   0.551   1.074  i_3 (i_3)
-     LUT4_D:I0->O          1   0.479   0.704  Madd_i_addsub0000_cy<3>11 (Madd_i_addsub0000_cy<3>)
-     LUT4:I3->O            1   0.479   0.000  i_mux0000<5>1 (i_mux0000<5>)
-     LD:D                      0.176          i_5
-    ----------------------------------------
-    Total                      3.463ns (1.685ns logic, 1.778ns route)
-                                       (48.7% logic, 51.3% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.798ns (frequency: 263.286MHz)
-  Total number of paths / destination ports: 33 / 23
+  Clock period: 5.668ns (frequency: 176.429MHz)
+  Total number of paths / destination ports: 159 / 56
 -------------------------------------------------------------------------
-Delay:               3.798ns (Levels of Logic = 1)
-  Source:            STATE_FSM_FFd3 (FF)
-  Destination:       STATE_FSM_FFd2 (FF)
+Delay:               5.668ns (Levels of Logic = 4)
+  Source:            u_rams/do_1 (FF)
+  Destination:       STATE_FSM_FFd3 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: STATE_FSM_FFd3 to STATE_FSM_FFd2
+  Data Path: u_rams/do_1 to STATE_FSM_FFd3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             12   0.626   1.120  STATE_FSM_FFd3 (STATE_FSM_FFd3)
-     LUT2:I1->O            1   0.479   0.681  STATE_FSM_FFd2-In_SW0 (N2)
-     FDRS:S                    0.892          STATE_FSM_FFd2
+     FD:C->Q               4   0.626   0.838  u_rams/do_1 (u_rams/do_1)
+     LUT4:I2->O            1   0.479   0.704  STATE_FSM_FFd3-In60_SW0 (N17)
+     LUT4:I3->O            1   0.479   0.704  STATE_FSM_FFd3-In60 (STATE_FSM_FFd3-In60)
+     LUT4:I3->O            1   0.479   0.704  STATE_FSM_FFd3-In66 (STATE_FSM_FFd3-In66)
+     LUT4:I3->O            1   0.479   0.000  STATE_FSM_FFd3-In1151 (STATE_FSM_FFd3-In115)
+     FDRS:D                    0.176          STATE_FSM_FFd3
     ----------------------------------------
-    Total                      3.798ns (1.997ns logic, 1.801ns route)
-                                       (52.6% logic, 47.4% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'STATE_FSM_FFd1'
-  Total number of paths / destination ports: 4 / 4
--------------------------------------------------------------------------
-Offset:              1.572ns (Levels of Logic = 1)
-  Source:            nueva_clave<0> (PAD)
-  Destination:       rams_di_0 (LATCH)
-  Destination Clock: STATE_FSM_FFd1 falling
-
-  Data Path: nueva_clave<0> to rams_di_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   0.715   0.681  nueva_clave_0_IBUF (nueva_clave_0_IBUF)
-     LD:D                      0.176          rams_di_0
-    ----------------------------------------
-    Total                      1.572ns (0.891ns logic, 0.681ns route)
-                                       (56.7% logic, 43.3% route)
+    Total                      5.668ns (2.718ns logic, 2.950ns route)
+                                       (48.0% logic, 52.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 24 / 18
+  Total number of paths / destination ports: 36 / 22
 -------------------------------------------------------------------------
-Offset:              3.807ns (Levels of Logic = 2)
-  Source:            escribir (PAD)
-  Destination:       STATE_FSM_FFd2 (FF)
+Offset:              5.996ns (Levels of Logic = 5)
+  Source:            clave<2> (PAD)
+  Destination:       STATE_FSM_FFd3 (FF)
   Destination Clock: clk rising
 
-  Data Path: escribir to STATE_FSM_FFd2
+  Data Path: clave<2> to STATE_FSM_FFd3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.715   1.040  escribir_IBUF (escribir_IBUF)
-     LUT2:I0->O            1   0.479   0.681  STATE_FSM_FFd2-In_SW0 (N2)
-     FDRS:S                    0.892          STATE_FSM_FFd2
+     IBUF:I->O             5   0.715   1.078  clave_2_IBUF (clave_2_IBUF)
+     LUT4:I0->O            1   0.479   0.704  STATE_FSM_FFd3-In60_SW0 (N17)
+     LUT4:I3->O            1   0.479   0.704  STATE_FSM_FFd3-In60 (STATE_FSM_FFd3-In60)
+     LUT4:I3->O            1   0.479   0.704  STATE_FSM_FFd3-In66 (STATE_FSM_FFd3-In66)
+     LUT4:I3->O            1   0.479   0.000  STATE_FSM_FFd3-In1151 (STATE_FSM_FFd3-In115)
+     FDRS:D                    0.176          STATE_FSM_FFd3
     ----------------------------------------
-    Total                      3.807ns (2.086ns logic, 1.721ns route)
-                                       (54.8% logic, 45.2% route)
+    Total                      5.996ns (2.807ns logic, 3.189ns route)
+                                       (46.8% logic, 53.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -542,14 +521,14 @@ Offset:              6.216ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.13 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.07 secs
  
 --> 
 
-Total memory usage is 259912 kilobytes
+Total memory usage is 258332 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
-Number of infos    :    8 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

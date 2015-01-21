@@ -4,3 +4,103 @@ map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map
 xst -intstyle ise -ifn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/asm.xst" -ofn "C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/asm.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
 map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 
+xst -intstyle ise -ifn "C:/hlocal/TOC/practica_final/practica_final/asm.xst" -ofn "C:/hlocal/TOC/practica_final/practica_final/asm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 asm.ngc asm.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o asm_map.ncd asm.ngd asm.pcf 
+par -w -intstyle ise -ol high -t 1 asm_map.ncd asm.ncd asm.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml asm.twx asm.ncd -o asm.twr asm.pcf 
+netgen -intstyle ise -s 5  -pcf asm.pcf -rpw 100 -tpw 0 -ar Structure -tm asm -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim asm.ncd asm_timesim.vhd 

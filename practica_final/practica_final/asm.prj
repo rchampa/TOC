@@ -1,4 +1,5 @@
 vhdl work "recursos/registro.vhd"
 vhdl work "recursos/ram.vhd"
 vhdl work "recursos/flipflop.vhd"
+vhdl work "recursos/comparador.vhd"
 vhdl work "recursos/asm.vhd"

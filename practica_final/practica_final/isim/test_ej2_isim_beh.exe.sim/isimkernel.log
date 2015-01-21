@@ -1,0 +1,28 @@
+Command line:
+   test_ej2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  2163
+
+Wed Jan 21 19:52:59 2015
+
+
+ Elaboration Time: 0.0468 sec
+
+ Current Memory Usage: 826.573 Meg
+
+ Total Signals          : 82
+ Total Nets             : 231
+ Total Signal Drivers   : 39
+ Total Blocks           : 12
+ Total Primitive Blocks : 10
+ Total Processes        : 26
+ Total Traceable Variables  : 20
+ Total Scalar Nets and Variables : 737
+
+ Total Simulation Time: 0.1092 sec
+
+ Current Memory Usage: 1141.15 Meg
+
+Wed Jan 21 19:53:47 2015
+
