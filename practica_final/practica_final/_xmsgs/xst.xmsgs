@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">87</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">89</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">105</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">111</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">113</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">118</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">122</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">124</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">129</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">134</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">136</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">142</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">146</arg>. Wait for statement unsupported.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1015" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd</arg>&quot; Line <arg fmt="%d" index="2">148</arg>. Wait for statement unsupported.
+</msg>
+
+</messages>
+

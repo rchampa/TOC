@@ -71,9 +71,10 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_black_jack_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="reg_contador_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="reg_contador_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="reg_contador_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_black_jack_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="test_black_jack_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_black_jack_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
@@ -88,14 +89,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418837995" xil_pn:in_ck="3445599498823168098" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1418837995">
+    <transform xil_pn:end_ts="1421852698" xil_pn:in_ck="-4183151001050876155" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1421852697">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="recursos/alu.vhd"/>
       <outfile xil_pn:name="recursos/black_jack.vhd"/>
       <outfile xil_pn:name="recursos/clk_divider.vhd"/>
@@ -104,15 +100,16 @@
       <outfile xil_pn:name="recursos/mux.vhd"/>
       <outfile xil_pn:name="recursos/rams.vhd"/>
       <outfile xil_pn:name="recursos/reg_contador.vhd"/>
+      <outfile xil_pn:name="recursos/reg_puntacion.vhd"/>
       <outfile xil_pn:name="recursos/registro.vhd"/>
       <outfile xil_pn:name="recursos/test_black_jack.vhd"/>
       <outfile xil_pn:name="recursos/test_reg_contador.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1418836991" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8410559233251343991" xil_pn:start_ts="1418836991">
+    <transform xil_pn:end_ts="1421852698" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8265960023681310982" xil_pn:start_ts="1421852698">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418836991" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="6576820755652967215" xil_pn:start_ts="1418836991">
+    <transform xil_pn:end_ts="1421852698" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3437550377978593714" xil_pn:start_ts="1421852698">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -120,14 +117,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1418836991" xil_pn:in_ck="3445599498823168098" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1418836991">
+    <transform xil_pn:end_ts="1421852698" xil_pn:in_ck="-4183151001050876155" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1421852698">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="recursos/alu.vhd"/>
       <outfile xil_pn:name="recursos/black_jack.vhd"/>
       <outfile xil_pn:name="recursos/clk_divider.vhd"/>
@@ -136,36 +128,30 @@
       <outfile xil_pn:name="recursos/mux.vhd"/>
       <outfile xil_pn:name="recursos/rams.vhd"/>
       <outfile xil_pn:name="recursos/reg_contador.vhd"/>
+      <outfile xil_pn:name="recursos/reg_puntacion.vhd"/>
       <outfile xil_pn:name="recursos/registro.vhd"/>
       <outfile xil_pn:name="recursos/test_black_jack.vhd"/>
       <outfile xil_pn:name="recursos/test_reg_contador.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1418836994" xil_pn:in_ck="3445599498823168098" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="3430140485300167998" xil_pn:start_ts="1418836991">
+    <transform xil_pn:end_ts="1421852704" xil_pn:in_ck="-4183151001050876155" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7295953756135953340" xil_pn:start_ts="1421852698">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="test_black_jack_beh.prj"/>
-      <outfile xil_pn:name="test_black_jack_isim_beh.exe"/>
+      <outfile xil_pn:name="reg_contador_beh.prj"/>
+      <outfile xil_pn:name="reg_contador_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1418836995" xil_pn:in_ck="-5096003474879731549" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1400830994328467669" xil_pn:start_ts="1418836994">
+    <transform xil_pn:end_ts="1421852705" xil_pn:in_ck="-2903738278888294967" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-1271778489548317519" xil_pn:start_ts="1421852704">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="test_black_jack_isim_beh.wdb"/>
+      <outfile xil_pn:name="reg_contador_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1418842499" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1418842499">
       <status xil_pn:value="SuccessfullyRun"/>

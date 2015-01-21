@@ -1,0 +1,10 @@
+Command line:
+   reg_contador_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49167
+
+Wed Jan 21 16:05:08 2015
+
+
+ Elaboration Time: 0.015625 sec

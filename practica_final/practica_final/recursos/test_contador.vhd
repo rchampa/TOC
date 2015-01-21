@@ -35,15 +35,20 @@ end test_contador;
 architecture Behavioral of test_contador is
 COMPONENT contador
    generic (N: natural:=5);
-	port (clk,contar,reset: in std_logic;
+	port (clk,reset,ce,load,ud: in std_logic;
+			din : in std_logic_vector (N-1 downto 0);
 		   dout: out std_logic_vector (N-1 downto 0));
    END COMPONENT;
     
 
    --Inputs
 	signal aux_clk : std_logic := '0';
-   signal aux_contar : std_logic;
 	signal aux_reset : std_logic;
+	signal aux_ce : std_logic;
+	signal aux_load : std_logic;	
+	signal aux_ud : std_logic;
+	signal aux_din : std_logic_vector(4 downto 0);
+	
 
  	--Outputs
    signal aux_dout : std_logic_vector(4 downto 0);
@@ -54,10 +59,13 @@ COMPONENT contador
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: contador PORT MAP (
+   uut: contador generic map (5) PORT MAP (
           clk => aux_clk,
-          contar => aux_contar,
 			 reset => aux_reset,
+			 ce => aux_ce,
+			 load => aux_load,
+			 ud => aux_ud,
+			 din => aux_din,
 			 dout => aux_dout
         );
 
@@ -75,22 +83,23 @@ BEGIN
    stim_proc: process
    begin		
       aux_reset <= '1';
-		aux_contar <= '0';
+		aux_ud <= '0';
 		wait for 10 ns;	
 		aux_reset <= '0';
-		aux_contar <= '1';
+		aux_ud <= '1';
+		aux_ce <= '1';
 		wait for 60 ns;	
-		
-		aux_reset <= '1';
-		wait for 60 ns;	
-		
-		aux_reset <= '0';
+		aux_ud <= '0';
+		wait for 80 ns;	
+		aux_load <= '1';
+		aux_din <= "01010";
 		wait for 30 ns;	
-		
-		aux_contar <= '0';
+		aux_load <= '0';
+		aux_ud <= '1';
 		wait for 20 ns;	
-		
-		aux_contar <= '1';
+		aux_ce <= '0';
+		wait for 30 ns;
+		aux_reset <= '1';
 		
       wait;
    end process;

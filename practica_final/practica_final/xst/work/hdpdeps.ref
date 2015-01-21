@@ -1,9 +1,37 @@
-V3 3
-FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd 2015/01/19.20:44:45 P.20131013
-EN work/rams 1421697512 \
+V3 19
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd 2015/01/21.02:27:11 P.20131013
+EN work/asm 1421854302 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/asm/Behavioral 1421854303 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/asm.vhd \
+      EN work/asm 1421854302 CP flipflop CP registro CP rams
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd 2015/01/20.19:16:12 P.20131013
+EN work/flipflop 1421854296 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/flipflop/Behavioral 1421854297 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/flipflop.vhd \
+      EN work/flipflop 1421854296
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd 2015/01/21.00:33:33 P.20131013
+EN work/rams 1421854300 \
       FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/rams/circuito 1421697513 \
+AR work/rams/circuito 1421854301 \
       FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/ram.vhd \
-      EN work/rams 1421697512
+      EN work/rams 1421854300
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd 2015/01/20.20:10:12 P.20131013
+EN work/registro 1421854298 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/registro/Behavioral 1421854299 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/registro.vhd \
+      EN work/registro 1421854298
+FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd 2015/01/20.23:25:53 P.20131013
+EN work/test_basica 0 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/test_basica/behavior 0 \
+      FL C:/Users/RicardoWin7/Documents/git/TOC/practica_final/practica_final/recursos/test.vhd \
+      EN work/test_basica 0 CP asm
